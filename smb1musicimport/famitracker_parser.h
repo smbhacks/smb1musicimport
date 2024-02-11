@@ -56,6 +56,7 @@ public:
 	bool already_did_pattern(int ch, int order_no);
 	int order_to_pattern(int ch, int order_no);
 	std::string get_note(int row_advance = 1);
+	std::vector<std::string> get_effects(int row_advance = 1);
 
 	int num_of_tracks;
 	int num_of_orders;

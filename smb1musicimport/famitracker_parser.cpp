@@ -161,6 +161,30 @@ std::string FtTXT::get_note(int row_advance)
 	return m_content.substr(pos + 2, 3);
 }
 
+std::vector<std::string> FtTXT::get_effects(int row_advance)
+{
+	std::vector<std::string> effects;
+	int pos = m_internal_pos;
+	pos = go_to_nth_element(m_selected_ch, ":", pos);
+	pos += 11;
+	int pos_newline = m_content.find('\n', pos);
+	while (m_content[pos] != ':' && pos < pos_newline)
+	{
+		effects.push_back(m_content.substr(pos, 3));
+		pos += 4;
+	}
+
+	if (row_advance != 0)
+	{
+		m_current_row += row_advance;
+		if (m_current_row < m_pattern_length)
+		{
+			m_internal_pos = go_to_nth_element(row_advance - 1, "ROW", m_internal_pos);
+		}
+	}
+	return effects;
+}
+
 void FtTXT::pattern_done(int ch, int order_no)
 {
 	m_pattern_processed_counter[ch][m_orders[order_no][ch]]++;

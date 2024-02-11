@@ -18,7 +18,7 @@ int main()
     }
     std::string pitch_table((std::istreambuf_iterator<char>(pfile)), std::istreambuf_iterator<char>());
     pfile.close();
-    file.select_track(0);
+    file.select_track(2);
 
     //handle conversion
     for (int ch = 0; ch < 4; ch++)
@@ -30,7 +30,10 @@ int main()
             std::cout << "Channel " << ch << " Pattern " << file.order_to_pattern(ch, order_no) << std::endl;
             while (!file.end_of_pattern())
             {
-                std::cout << file.get_note() << std::endl;
+                std::vector<std::string> effects = file.get_effects(0);
+                std::cout << file.get_note();
+                for (std::string& effect : effects) std::cout << " " << effect;
+                std::cout << std::endl;
             }
             file.pattern_done(ch, order_no);
         }
