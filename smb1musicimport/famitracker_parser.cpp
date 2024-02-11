@@ -90,7 +90,7 @@ FtTXT::FtTXT(std::string path)
 	else m_open = false;
 }
 
-int FtTXT::go_to_nth_element(int nth_element, std::string find_str, int pos = 0)
+int FtTXT::go_to_nth_element(int nth_element, std::string find_str, int pos)
 {
 	while (nth_element >= 0)
 	{
@@ -106,7 +106,10 @@ void FtTXT::select_track(int track_no)
 {
 	m_selected_track = track_no;
 	int pos = go_to_nth_element(track_no, "TRACK");
+	get_string(pos); //dummy TRACK read
+	m_pattern_length = stoi(get_string(pos));
 	pos = m_content.find("ORDER", pos);
+	int num_ch = 0;
 	while (get_string(pos) == "ORDER")
 	{
 		// 2 dummy reads for ORDER number and :
@@ -119,20 +122,25 @@ void FtTXT::select_track(int track_no)
 			values.push_back(stoi(get_string(pos), nullptr, 16));
 		}
 		m_orders.push_back(values);
+		num_ch = values.size();
 	}
+	m_pattern_processed_counter.clear();
+	m_pattern_processed_counter.resize(num_ch);
+	std::fill(m_pattern_processed_counter.begin(), m_pattern_processed_counter.end(), std::vector<int>(256, 0));
 	num_of_orders = m_orders.size();
 }
 
 bool FtTXT::go_to_pattern(int ch, int order_no)
 {
 	int pattern_no = m_orders[order_no][ch];
-	m_interal_pos = go_to_nth_element(m_selected_track, "TRACK");
+	m_internal_pos = go_to_nth_element(m_selected_track, "TRACK");
 	int out_of_bounds = go_to_nth_element(m_selected_track + 1, "TRACK");
-	m_interal_pos = m_content.find(std::format("PATTERN {:02X}", pattern_no), m_interal_pos);
-	if (m_interal_pos < out_of_bounds)
+	m_internal_pos = m_content.find(std::format("PATTERN {:02X}", pattern_no), m_internal_pos);
+	if (m_internal_pos < out_of_bounds)
 	{
+		m_current_row = 0;
 		m_selected_ch = ch;
-		m_interal_pos = m_content.find("ROW", m_interal_pos);
+		m_internal_pos = m_content.find("ROW", m_internal_pos);
 		return true;
 	}
 	else return false; //couldnt find pattern!
@@ -140,7 +148,35 @@ bool FtTXT::go_to_pattern(int ch, int order_no)
 
 std::string FtTXT::get_note(int row_advance)
 {
-	int pos = m_interal_pos;
+	int pos = m_internal_pos;
 	pos = go_to_nth_element(m_selected_ch, ":", pos);
+	if (row_advance != 0)
+	{
+		m_current_row += row_advance;
+		if (m_current_row < m_pattern_length)
+		{
+			m_internal_pos = go_to_nth_element(row_advance - 1, "ROW", m_internal_pos);
+		}
+	}
 	return m_content.substr(pos + 2, 3);
+}
+
+void FtTXT::pattern_done(int ch, int order_no)
+{
+	m_pattern_processed_counter[ch][m_orders[order_no][ch]]++;
+}
+
+bool FtTXT::end_of_pattern()
+{
+	return m_current_row >= m_pattern_length;
+}
+
+bool FtTXT::already_did_pattern(int ch, int order_no)
+{
+	return m_pattern_processed_counter[ch][m_orders[order_no][ch]] > 0;
+}
+
+int FtTXT::order_to_pattern(int ch, int order_no)
+{
+	return m_orders[order_no][ch];
 }
