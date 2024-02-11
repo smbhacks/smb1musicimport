@@ -34,8 +34,8 @@ FtTXT::FtTXT(std::string path)
 	{
 		//load file
 		m_content.assign((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
-		
-		//load instruments
+	
+		//load macros
 		int pos = next_line(m_content.find(InstrumentsLabel));
 		while (get_string(pos) == "INST2A03")
 		{
@@ -48,6 +48,26 @@ FtTXT::FtTXT(std::string path)
 			instrument.duty = stoi(get_string(pos));
 			instrument.name = get_string(pos);
 			m_instruments.push_back(instrument);
+		}
+
+		//load instruments
+		pos = next_line(m_content.find(MacrosLabel));
+		while (get_string(pos) == "MACRO")
+		{
+			FtMacro macro;
+			macro.purpose = stoi(get_string(pos));
+			macro.id = stoi(get_string(pos));
+			macro.loop = stoi(get_string(pos));
+			macro.release = stoi(get_string(pos));
+			macro.chip = stoi(get_string(pos));
+			int pos_end = m_content.find('\n', pos);
+			get_string(pos); // dummy read to skip :
+			while (pos < pos_end)
+			{
+				macro.values.push_back(stoi(get_string(pos)));
+			}
+
+			m_macros.push_back(macro);
 		}
 
 		m_open = true;
