@@ -18,5 +18,13 @@
     <ClCompile Include="smb1musicimport.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="famitracker_parser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="famitracker_parser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
