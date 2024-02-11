@@ -27,16 +27,22 @@ std::string FtTXT::get_string(int& pos)
 	}
 }
 
+bool FtTXT::is_open()
+{
+	return m_open;
+}
+
 FtTXT::FtTXT(std::string path)
 {
+	int pos;
 	std::ifstream file(path);
 	if (file.is_open())
 	{
 		//load file
 		m_content.assign((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
 	
-		//load macros
-		int pos = next_line(m_content.find(InstrumentsLabel));
+		//load instruments
+		pos = next_line(m_content.find(InstrumentsLabel));
 		while (get_string(pos) == "INST2A03")
 		{
 			FtInst instrument;
@@ -50,7 +56,7 @@ FtTXT::FtTXT(std::string path)
 			m_instruments.push_back(instrument);
 		}
 
-		//load instruments
+		//load macros
 		pos = next_line(m_content.find(MacrosLabel));
 		while (get_string(pos) == "MACRO")
 		{
@@ -69,13 +75,42 @@ FtTXT::FtTXT(std::string path)
 
 			m_macros.push_back(macro);
 		}
-
 		m_open = true;
+
+		//count tracks
+		pos = 0;
+		num_of_tracks = 0;
+		while (pos < m_content.size())
+		{
+			pos = m_content.find("TRACK", pos + 1);
+			++num_of_tracks;
+		}
+		--num_of_tracks;
 	}
 	else m_open = false;
 }
 
-bool FtTXT::is_open()
+// Tracks are indexed from 1
+void FtTXT::select_track(int track_no)
 {
-	return m_open;
+	int pos = 0;
+	while (track_no > 0)
+	{
+		pos = m_content.find("TRACK", pos + 1);
+		track_no--;
+	}
+	pos = m_content.find("ORDER", pos);
+	while (get_string(pos) == "ORDER")
+	{
+		// 2 dummy reads for ORDER number and :
+		get_string(pos);
+		get_string(pos);
+		std::vector<int> values;
+		int pos_end = m_content.find('\n', pos);
+		while (pos < pos_end)
+		{
+			values.push_back(stoi(get_string(pos), nullptr, 16));
+		}
+		m_orders.push_back(values);
+	}
 }

@@ -9,4 +9,5 @@ int main()
         std::cout << "ERROR: Couldn't open the file!";
         return -1;
     }
+    file.select_track(1);
 }

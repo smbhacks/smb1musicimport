@@ -27,16 +27,21 @@ struct FtInst
 class FtTXT
 {
 private:
-	const char* InstrumentsLabel = "# Instruments";
-	const char* MacrosLabel = "# Macros";
 	int next_line(int pos);
 	std::string get_string(int& pos);
 
+	const char* InstrumentsLabel = "# Instruments";
+	const char* MacrosLabel = "# Macros";
+	
 	std::string m_content;
-	bool m_open = false;
 	std::vector<FtInst> m_instruments;
 	std::vector<FtMacro> m_macros;
+	std::vector<std::vector<int>> m_orders;
+	bool m_open = false;
 public:
 	FtTXT(std::string path);
 	bool is_open();
+	void select_track(int track_no);
+
+	int num_of_tracks;
 };
