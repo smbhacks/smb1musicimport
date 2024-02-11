@@ -90,14 +90,13 @@ FtTXT::FtTXT(std::string path)
 	else m_open = false;
 }
 
-int FtTXT::go_to_track(int track_no)
+int FtTXT::go_to_nth_element(int nth_element, std::string find_str, int pos = 0)
 {
-	int pos = 0;
-	while (track_no > 0)
+	while (nth_element >= 0)
 	{
-		pos = m_content.find("TRACK", pos + 1);
+		pos = m_content.find(find_str, pos + 1);
 		if (pos > m_content.size()) return m_content.size();
-		track_no--;
+		nth_element--;
 	}
 	return pos;
 }
@@ -106,7 +105,7 @@ int FtTXT::go_to_track(int track_no)
 void FtTXT::select_track(int track_no)
 {
 	m_selected_track = track_no;
-	int pos = go_to_track(track_no);
+	int pos = go_to_nth_element(track_no, "TRACK");
 	pos = m_content.find("ORDER", pos);
 	while (get_string(pos) == "ORDER")
 	{
@@ -124,11 +123,24 @@ void FtTXT::select_track(int track_no)
 	num_of_orders = m_orders.size();
 }
 
-bool FtTXT::go_to_pattern(int pattern_no)
+bool FtTXT::go_to_pattern(int ch, int order_no)
 {
-	m_interal_pos = go_to_track(m_selected_track);
-	int out_of_bounds = go_to_track(m_selected_track + 1);
+	int pattern_no = m_orders[order_no][ch];
+	m_interal_pos = go_to_nth_element(m_selected_track, "TRACK");
+	int out_of_bounds = go_to_nth_element(m_selected_track + 1, "TRACK");
 	m_interal_pos = m_content.find(std::format("PATTERN {:02X}", pattern_no), m_interal_pos);
-	if (m_interal_pos < out_of_bounds) return true;
+	if (m_interal_pos < out_of_bounds)
+	{
+		m_selected_ch = ch;
+		m_interal_pos = m_content.find("ROW", m_interal_pos);
+		return true;
+	}
 	else return false; //couldnt find pattern!
+}
+
+std::string FtTXT::get_note(int row_advance)
+{
+	int pos = m_interal_pos;
+	pos = go_to_nth_element(m_selected_ch, ":", pos);
+	return m_content.substr(pos + 2, 3);
 }
