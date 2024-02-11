@@ -126,7 +126,7 @@ void FtTXT::select_track(int track_no)
 	}
 	m_pattern_processed_counter.clear();
 	m_pattern_processed_counter.resize(num_ch);
-	std::fill(m_pattern_processed_counter.begin(), m_pattern_processed_counter.end(), std::vector<int>(256, 0));
+	std::fill(m_pattern_processed_counter.begin(), m_pattern_processed_counter.end(), std::vector<int>(256));
 	num_of_orders = m_orders.size();
 }
 
