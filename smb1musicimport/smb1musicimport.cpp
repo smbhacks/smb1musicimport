@@ -1,4 +1,5 @@
 #include <iostream>
+#include <format>
 #include "famitracker_parser.h"
 
 int main()
@@ -9,5 +10,6 @@ int main()
         std::cout << "ERROR: Couldn't open the file!";
         return -1;
     }
-    file.select_track(1);
+    file.select_track(2);
+    file.go_to_pattern(11);
 }

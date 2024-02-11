@@ -90,15 +90,23 @@ FtTXT::FtTXT(std::string path)
 	else m_open = false;
 }
 
-// Tracks are indexed from 1
-void FtTXT::select_track(int track_no)
+int FtTXT::go_to_track(int track_no)
 {
 	int pos = 0;
 	while (track_no > 0)
 	{
 		pos = m_content.find("TRACK", pos + 1);
+		if (pos > m_content.size()) return m_content.size();
 		track_no--;
 	}
+	return pos;
+}
+
+// Tracks are indexed from 1
+void FtTXT::select_track(int track_no)
+{
+	m_selected_track = track_no;
+	int pos = go_to_track(track_no);
 	pos = m_content.find("ORDER", pos);
 	while (get_string(pos) == "ORDER")
 	{
@@ -113,4 +121,14 @@ void FtTXT::select_track(int track_no)
 		}
 		m_orders.push_back(values);
 	}
+	num_of_orders = m_orders.size();
+}
+
+bool FtTXT::go_to_pattern(int pattern_no)
+{
+	m_interal_pos = go_to_track(m_selected_track);
+	int out_of_bounds = go_to_track(m_selected_track + 1);
+	m_interal_pos = m_content.find(std::format("PATTERN {:02X}", pattern_no), m_interal_pos);
+	if (m_interal_pos < out_of_bounds) return true;
+	else return false; //couldnt find pattern!
 }
