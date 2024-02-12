@@ -21,7 +21,7 @@ uint8_t MusicLengthLookupTbl[] =
 uint8_t RowsBase2[8] = { SP_2(1) };
 uint8_t RowsBase3[8] = { SP_3(1) };
 uint8_t UsedRowSizes[8] = { SP_2(1) };
-uint8_t handle_sq2_note(std::string pitch_table, std::string note)
+uint8_t get_note_value(std::string pitch_table, std::string note)
 {
     int p = pitch_table.find(note);
     //count newlines before p
@@ -34,21 +34,22 @@ uint8_t handle_sq2_note(std::string pitch_table, std::string note)
     return newlines * 2;
 }
 
-bool handle_sq2_rhythm(std::vector<uint8_t>& data, int row_value, std::string pitch_table, std::string cur_note)
+bool handle_sq2_rhythm(std::vector<uint8_t>& data, int remaining_rows, std::string pitch_table, std::string cur_note, int& cur_row_length)
 {
     bool put_down_note = false;
-    while (row_value > 0)
+    while (remaining_rows > 0)
     {
         for (int x = 7; x >= 0; x--)
         {
-            if (row_value - UsedRowSizes[x] >= 0)
+            if (remaining_rows - UsedRowSizes[x] >= 0)
             {
-                row_value -= UsedRowSizes[x];
-                data.push_back(0x80 + x);
-                if (put_down_note) data.push_back(handle_sq2_note(pitch_table, "..."));
-                else if(row_value != 0)
+                remaining_rows -= UsedRowSizes[x];
+                if(cur_row_length != UsedRowSizes[x]) data.push_back(0x80 + x);
+                cur_row_length = UsedRowSizes[x];
+                if (put_down_note) data.push_back(get_note_value(pitch_table, "---"));
+                else
                 {
-                    data.push_back(handle_sq2_note(pitch_table, cur_note));
+                    data.push_back(get_note_value(pitch_table, cur_note));
                 }
                 put_down_note = true;
                 break;
@@ -56,6 +57,30 @@ bool handle_sq2_rhythm(std::vector<uint8_t>& data, int row_value, std::string pi
         }
     }
     return put_down_note;
+}
+
+void handle_sq1_note(std::vector<uint8_t>& data, int remaining_rows, std::string pitch_table, std::string cur_note, int& cur_row_length)
+{
+    bool put_down_note = false;
+    uint8_t note_value = get_note_value(pitch_table, cur_note);
+    while (remaining_rows > 0)
+    {
+        for (int x = 7; x >= 0; x--)
+        {
+            if (remaining_rows - UsedRowSizes[x] >= 0)
+            {
+                remaining_rows -= UsedRowSizes[x];
+                cur_row_length = UsedRowSizes[x];
+                uint8_t note_value; 
+                uint8_t rhythm_value = (x >> 2) + (x << 6);
+                if(!put_down_note) note_value = get_note_value(pitch_table, cur_note);
+                else note_value = get_note_value(pitch_table, "---");
+                data.push_back(note_value | rhythm_value);
+                put_down_note = true;
+                break;
+            }
+        }
+    }
 }
 
 int main()
@@ -93,7 +118,7 @@ int main()
     //counting the row lengths
     int div2 = 0;
     int div3 = 0;
-    file.select_track(2);
+    file.select_track(1);
     for (int ch = 0; ch < 4; ch++)
     {
         for (int order_no = 0; order_no < file.num_of_orders; order_no++)
@@ -127,7 +152,7 @@ int main()
     }
 
     //handle actual parsing
-    file.select_track(2);
+    file.select_track(1);
     for (int ch = 0; ch < 4; ch++)
     {
         for (int order_no = 0; order_no < file.num_of_orders; order_no++)
@@ -153,16 +178,19 @@ int main()
                     d00_effect = std::find(effects.begin(), effects.end(), "D00") != effects.end();
                     next_note_distance++;
                 } while (check_note == "..." && !d00_effect);
+                if (d00_effect) next_note_distance++;
                 if (ch == SQ2_CH || ch == TRI_CH)
                 {
                     bool put_down_note = false;
-                    if (d00_effect) next_note_distance++;
                     if (next_note_distance != cur_row_length)
                     {
-                        cur_row_length = next_note_distance;
-                        put_down_note = handle_sq2_rhythm(music_data[ch][pattern_number], cur_row_length, pitch_table, cur_note);
+                        put_down_note = handle_sq2_rhythm(music_data[ch][pattern_number], next_note_distance, pitch_table, cur_note, cur_row_length);
                     }
-                    if(!put_down_note) music_data[ch][pattern_number].push_back(handle_sq2_note(pitch_table, cur_note));
+                    if(!put_down_note) music_data[ch][pattern_number].push_back(get_note_value(pitch_table, cur_note));
+                } 
+                else if (ch == SQ1_CH)
+                {
+                    handle_sq1_note(music_data[ch][pattern_number], next_note_distance, pitch_table, cur_note, cur_row_length);
                 }
             }
             ofile << std::format("\n\n{}_{}_{}:\n", file.track_name, channel_names[ch], pattern_number);
