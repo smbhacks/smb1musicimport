@@ -141,15 +141,21 @@ std::vector<uint8_t> optimize_noi(std::vector<uint8_t> test)
     return test;
 }
 
-int main()
+int main(int argc, char* argv[])
 {
-    FtTXT file("test/music.txt");
+    if (argc < 4)
+    {
+        std::cout << "Usage: smb1musimport.exe [ft_text_export.txt] [pitch_table.asm] [song number]";
+        return -1;
+    }
+    int input_track_number = atoi(argv[3]);
+    FtTXT file(argv[1]);
     if (!file.is_open())
     {
         std::cout << "ERROR: Couldn't open the music file!";
         return -1;
     }
-    std::ifstream pfile("test/pitch_table.asm");
+    std::ifstream pfile(argv[2]);
     if (!pfile.is_open())
     {
         std::cout << "ERROR: Couldn't open the pitch_table.asm file!";
@@ -158,10 +164,11 @@ int main()
     std::string pitch_table((std::istreambuf_iterator<char>(pfile)), std::istreambuf_iterator<char>());
     pfile.close();
 
-    std::ofstream ofile("test/music_data.asm");
+    std::ofstream ofile("music_data.asm");
     //create MusicLengthLookupTbl
     ofile << "MusicLengthLookupTbl:\n";
     write_to_file(ofile, MusicLengthLookupTbl, 112);
+    ofile << "\n";
 
     std::vector<std::vector<std::vector<uint8_t>>> music_data(4);
     std::fill(music_data.begin(), music_data.end(), std::vector<std::vector<uint8_t>>(256));
@@ -178,7 +185,7 @@ int main()
     //counting the row lengths
     int div2 = 0;
     int div3 = 0;
-    file.select_track(0);
+    file.select_track(input_track_number);
     for (int ch = 0; ch < 4; ch++)
     {
         for (int order_no = 0; order_no < file.num_of_orders; order_no++)
@@ -212,7 +219,7 @@ int main()
     }
 
     //handle actual parsing
-    file.select_track(0);
+    file.select_track(input_track_number);
     for (int ch = 0; ch < 4; ch++)
     {
         for (int order_no = 0; order_no < file.num_of_orders; order_no++)
@@ -277,6 +284,10 @@ int main()
                     handle_noi_note(music_data[ch][pattern_number], next_note_distance, note_value, cur_row_length);
                 }
             }
+            if (ch == NOI_CH) music_data[ch][pattern_number] = optimize_noi(music_data[ch][pattern_number]);
+            if (ch == NOI_CH || ch == SQ2_CH) music_data[ch][pattern_number].push_back(0);
+            ofile << std::format("\n{}_{}_{}:\n", file.track_name, channel_names[ch], pattern_number);
+            write_to_file(ofile, music_data[ch][pattern_number].data(), music_data[ch][pattern_number].size(), 16);
             file.pattern_done(ch, order_no);
         }
     }
