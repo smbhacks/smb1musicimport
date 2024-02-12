@@ -141,14 +141,51 @@ std::vector<uint8_t> optimize_noi(std::vector<uint8_t> test)
     return test;
 }
 
+const enum ExportMode
+{
+    Undefined,
+    StudsBase,
+    Pattern,
+    SinglePattern
+};
 int main(int argc, char* argv[])
 {
-    if (argc < 4)
+    if (argc < 5)
     {
-        std::cout << "Usage: smb1musimport.exe [ft_text_export.txt] [pitch_table.asm] [song number]";
+        std::cout << "\nUsage: [textexport.txt] [pitch_table.asm] [song number] [-studsbase]/[-pattern -o/-u]/[-singlepattern]";
+        std::cout << "\n[textexport.txt]: Path to the .txt file exported by Famitracker.";
+        std::cout << "\n[pitch_table.asm]: Path to the pitch lookup table file. \nThe parser gets note values from here based on the text row numbers!";
+        std::cout << "\n[song number]: Song number in the module. 0 means every song";
+        std::cout << "\n-studsbase: Export for the studsbase SMB1 base.";
+        std::cout << "\n-pattern -o/-u: Export pattern music data. Takes in an extra argument for the noise patterns:";
+        std::cout << "\n\t-o: Optimize noise pattern with the 00 music data at the end (repeat from start)";
+        std::cout << "\n\t-u: Keep the noise data unoptimized.";
+        std::cout << "\n-singlepattern: Try to export all of the song's music data in under 1 label.";
+        std::cout << "\n";
         return -1;
     }
-    int input_track_number = atoi(argv[3]);
+    int input_track_number = atoi(argv[3]) - 1;
+    ExportMode export_mode = Undefined;
+    bool export_optimized = false;
+    if (std::strcmp(argv[4], "-studsbase"))
+    {
+        export_mode = StudsBase;
+    }
+    else if (std::strcmp(argv[4], "-pattern"))
+    {
+        if (argc < 6)
+        {
+            std::cout << "\nPlease specify whether you want the pattern export be optimized or not with the -o and -u parameters!\n";
+            return -1;
+        }
+        if (std::strcmp(argv[5], "-o")) export_optimized = true;
+        else if (std::strcmp(argv[5], "-u")) export_optimized = false;
+        else
+        {
+            std::cout << "\nERROR: Invalid parameter: " << argv[5] << "\n";
+        }
+    }
+
     FtTXT file(argv[1]);
     if (!file.is_open())
     {
@@ -284,10 +321,7 @@ int main(int argc, char* argv[])
                     handle_noi_note(music_data[ch][pattern_number], next_note_distance, note_value, cur_row_length);
                 }
             }
-            if (ch == NOI_CH) music_data[ch][pattern_number] = optimize_noi(music_data[ch][pattern_number]);
-            if (ch == NOI_CH || ch == SQ2_CH) music_data[ch][pattern_number].push_back(0);
-            ofile << std::format("\n{}_{}_{}:\n", file.track_name, channel_names[ch], pattern_number);
-            write_to_file(ofile, music_data[ch][pattern_number].data(), music_data[ch][pattern_number].size(), 16);
+            if (ch == SQ2_CH) music_data[ch][pattern_number].push_back(0);
             file.pattern_done(ch, order_no);
         }
     }
@@ -300,4 +334,5 @@ int main(int argc, char* argv[])
         std::vector<uint8_t> optimized_data = optimize_noi(music_data[NOI_CH][i]);
         optimized_noise_patterns.push_back(optimized_data);
     }
+
 }
