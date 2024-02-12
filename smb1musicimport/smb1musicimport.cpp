@@ -190,9 +190,10 @@ int main(int argc, char* argv[])
     //create MusicLengthLookupTbl
     ofile << "MusicLengthLookupTbl:\n";
     write_to_file(ofile, MusicLengthLookupTbl, 112);
+
     const std::string noise_inst_names[] = { "HIHAT", "KICK", "SNARE" };
     const int noise_inst_values[] = { 0x10,    0x20,    0x30 };
-
+    std::vector<int> speed_values;
     do
     {
         std::vector<std::vector<std::vector<uint8_t>>> music_data(4);
@@ -232,8 +233,9 @@ int main(int argc, char* argv[])
         //if 3 based song, overwrite the row sizes
         if (div3 > div2)
         {
+            speed_values.push_back(8 * (file.track_speed - 1 + 7));
             for (int i = 0; i < 8; i++) UsedRowSizes[i] = RowsBase3[i];
-        }
+        } else speed_values.push_back(8 * (file.track_speed - 1));
 
         //handle actual parsing
         file.select_track(input_track_number);
@@ -308,4 +310,26 @@ int main(int argc, char* argv[])
         if (export_mode == StudsBase) export_to_studsbase(ofile, music_data, file, input_track_number);
         input_track_number++;
     } while (every_song && input_track_number < file.num_of_tracks);
+    if (export_mode == StudsBase)
+    {
+        std::vector<std::string> track_names;
+        for (int i = 0; i < file.num_of_tracks; i++)
+        {
+            file.select_track(i);
+            track_names.push_back(file.track_name);
+        }
+        //export
+        ofile << "\n\nMusicHeaderData:\n";
+        std::vector<std::string> values;
+        for (int i = 0; i < file.num_of_tracks; i++)
+        {
+            values.push_back(std::format("{}Hdr-MHD", track_names[i]));
+        }
+        write_to_file_string(ofile, values.data(), values.size(), 1);
+        ofile << "\n";
+        for (int i = 0; i < file.num_of_tracks; i++)
+        {
+            ofile << std::format("\n{}Hdr: .db ${:02X}, <{}_PatternsHigh, >{}_PatternsHigh, <{}_PatternsLow, >{}_PatternsLow", track_names[i], speed_values[i], track_names[i], track_names[i], track_names[i], track_names[i]);
+        }
+    }
 }
