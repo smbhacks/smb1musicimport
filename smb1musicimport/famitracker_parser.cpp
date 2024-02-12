@@ -117,6 +117,7 @@ int FtTXT::go_to_nth_element(int nth_element, std::string find_str, int pos)
 void FtTXT::select_track(int track_no)
 {
 	m_selected_track = track_no;
+	m_orders.clear();
 	int pos = go_to_nth_element(track_no, "TRACK");
 	get_string(pos); //dummy TRACK read
 	m_pattern_length = stoi(get_string(pos));

@@ -49,3 +49,16 @@
 .db $02, $cf ;D#2
 .db $01, $fc ;A-2
 .db $00, $6a ;C-5
+.db $00, $4b ;F#5 ;Extra-notes that are not in vanilla SMB1 
+.db $00, $3f ;A-5
+.db $00, $38 ;B-5
+.db $00, $31 ;C#6
+.db $00, $2c ;D#6
+.db $00, $27 ;F-6
+.db $05, $4c ;E-1
+.db $05, $00 ;F-1
+.db $04, $b8 ;F#1
+.db $04, $34 ;G#1
+.db $03, $f8 ;A-1
+.db $03, $bf ;A#1
+.db $03, $89 ;B-1

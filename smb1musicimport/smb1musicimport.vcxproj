@@ -133,9 +133,11 @@
   <ItemGroup>
     <ClCompile Include="famitracker_parser.cpp" />
     <ClCompile Include="smb1musicimport.cpp" />
+    <ClCompile Include="write_file.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="famitracker_parser.h" />
+    <ClInclude Include="write_file.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
