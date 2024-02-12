@@ -120,6 +120,9 @@ void FtTXT::select_track(int track_no)
 	int pos = go_to_nth_element(track_no, "TRACK");
 	get_string(pos); //dummy TRACK read
 	m_pattern_length = stoi(get_string(pos));
+	track_speed = stoi(get_string(pos));
+	track_tempo = stoi(get_string(pos));
+	track_name = get_string(pos);
 	pos = m_content.find("ORDER", pos);
 	int num_ch = 0;
 	while (get_string(pos) == "ORDER")

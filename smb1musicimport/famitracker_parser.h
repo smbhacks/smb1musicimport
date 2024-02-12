@@ -62,4 +62,7 @@ public:
 
 	int num_of_tracks;
 	int num_of_orders;
+	int track_speed;
+	int track_tempo;
+	std::string track_name;
 };
