@@ -173,38 +173,34 @@ bool FtTXT::advance_row(int row_advance)
 
 std::string FtTXT::get_note(int row_advance_before_note, int row_advance_after_note)
 {
-	if (advance_row(row_advance_before_note))
+	if (advance_row(row_advance_before_note) && m_current_row >= 0 && m_current_row < m_pattern_length)
 	{
 		int pos = m_internal_pos;
 		pos = go_to_nth_element(m_selected_ch, ":", pos);
 		advance_row(row_advance_after_note);
 		return m_content.substr(pos + 2, 3);
 	}
-	return "ERR"; //out of bounds row read!
+	return "OUT_OF_BOUNDS"; //out of bounds row read!
 }
 
-std::vector<std::string> FtTXT::get_effects(int row_advance)
+std::vector<std::string> FtTXT::get_effects(int row_advance_before_note, int row_advance_after_note)
 {
-	std::vector<std::string> effects;
-	int pos = m_internal_pos;
-	pos = go_to_nth_element(m_selected_ch, ":", pos);
-	pos += 11;
-	int pos_newline = m_content.find('\n', pos);
-	while (m_content[pos] != ':' && pos < pos_newline)
+	if (advance_row(row_advance_before_note))
 	{
-		effects.push_back(m_content.substr(pos, 3));
-		pos += 4;
-	}
-
-	if (row_advance != 0)
-	{
-		m_current_row += row_advance;
-		if (m_current_row < m_pattern_length)
+		std::vector<std::string> effects;
+		int pos = m_internal_pos;
+		pos = go_to_nth_element(m_selected_ch, ":", pos);
+		pos += 11;
+		int pos_newline = m_content.find('\n', pos);
+		while (m_content[pos] != ':' && pos < pos_newline)
 		{
-			m_internal_pos = go_to_nth_element(row_advance - 1, "ROW", m_internal_pos);
+			effects.push_back(m_content.substr(pos, 3));
+			pos += 4;
 		}
+		advance_row(row_advance_after_note);
+		return effects;
 	}
-	return effects;
+	return std::vector<std::string>({"OUT_OF_BOUNDS"}); //out of bounds
 }
 
 int FtTXT::current_row()

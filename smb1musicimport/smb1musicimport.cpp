@@ -12,6 +12,11 @@ void write_to_file(std::ofstream& file, uint8_t array[], int size, int mod = 8)
         file << std::format("${:02x}{}", array[i], (i + 1) == size ? "" : (i + 1) % mod == 0 ? "\n\t.db " : ", ");
 }
 
+uint8_t handle_sq2_data()
+{
+    return 0;
+}
+
 int main()
 {
     FtTXT file("test/music.txt");
@@ -43,12 +48,42 @@ int main()
     std::fill(music_data.begin(), music_data.end(), std::vector<uint8_t>(256));
 
     //parse SQ2 and TRI
-    for (int ch = 1; ch < 3; ch++)
+    const int SQ1_CH = 0;
+    const int SQ2_CH = 1;
+    const int TRI_CH = 2;
+    const int NOI_CH = 3;
+    for (int ch = 0; ch < 4; ch++)
     {
         for (int order_no = 0; order_no < file.num_of_orders; order_no++)
         {
             if (file.already_did_pattern(ch, order_no)) continue;
             file.go_to_pattern(ch, order_no);
+
+            int cur_row_length = -1;
+            bool d00_effect = false;
+
+            while (!file.end_of_pattern() && !d00_effect)
+            {
+                int next_note_distance = 0;
+                std::string cur_note = file.get_note(0, 0);
+                int t = file.current_row();
+                std::string check_note;
+                do
+                {
+                    std::vector<std::string> effects = file.get_effects(1, 0);
+                    check_note = file.get_note(0, 0);
+                    file.current_row();
+                    d00_effect = std::find(effects.begin(), effects.end(), "D00") != effects.end();
+                    next_note_distance++;
+                } while (check_note == "..." && !d00_effect);
+                if (ch == SQ2_CH || ch == TRI_CH)
+                {
+                    if (d00_effect) next_note_distance++;
+                    std::cout << cur_note << " " << next_note_distance << std::endl;
+                    //music_data[ch].push_back(handle_sq2_data());
+                }
+            }
+
             file.pattern_done(ch, order_no);
         }
         std::cout << std::endl;
