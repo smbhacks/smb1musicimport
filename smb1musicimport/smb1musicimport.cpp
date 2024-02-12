@@ -83,6 +83,27 @@ void handle_sq1_note(std::vector<uint8_t>& data, int remaining_rows, std::string
     }
 }
 
+void handle_noi_note(std::vector<uint8_t>& data, int remaining_rows, int note_value, int& cur_row_length)
+{
+    bool put_down_note = false;
+    while (remaining_rows > 0)
+    {
+        for (int x = 7; x >= 0; x--)
+        {
+            if (remaining_rows - UsedRowSizes[x] >= 0)
+            {
+                remaining_rows -= UsedRowSizes[x];
+                cur_row_length = UsedRowSizes[x];
+                uint8_t rhythm_value = (x >> 2) + (x << 6);
+                if (put_down_note) note_value = 0x04;
+                data.push_back(note_value | rhythm_value);
+                put_down_note = true;
+                break;
+            }
+        }
+    }
+}
+
 int main()
 {
     FtTXT file("test/music.txt");
@@ -108,6 +129,8 @@ int main()
     std::vector<std::vector<std::vector<uint8_t>>> music_data(4);
     std::fill(music_data.begin(), music_data.end(), std::vector<std::vector<uint8_t>>(256));
 
+    const std::string noise_inst_names[] = { "HIHAT", "KICK", "SNARE" };
+    const int noise_inst_values[] =  { 0x10,    0x20,    0x30 };
     const char* channel_names[] = { "SQ1_CH", "SQ2_CH", "TRI_CH", "NOI_CH" };
     const int SQ1_CH = 0;
     const int SQ2_CH = 1;
@@ -118,7 +141,7 @@ int main()
     //counting the row lengths
     int div2 = 0;
     int div3 = 0;
-    file.select_track(1);
+    file.select_track(0);
     for (int ch = 0; ch < 4; ch++)
     {
         for (int order_no = 0; order_no < file.num_of_orders; order_no++)
@@ -152,7 +175,7 @@ int main()
     }
 
     //handle actual parsing
-    file.select_track(1);
+    file.select_track(0);
     for (int ch = 0; ch < 4; ch++)
     {
         for (int order_no = 0; order_no < file.num_of_orders; order_no++)
@@ -168,6 +191,7 @@ int main()
             {
                 int next_note_distance = 0;
                 std::string cur_note = file.get_note(0, 0);
+                int cur_instrument = file.get_instrument(0, 0);
                 int t = file.current_row();
                 std::string check_note;
                 do
@@ -188,14 +212,34 @@ int main()
                     }
                     if(!put_down_note) music_data[ch][pattern_number].push_back(get_note_value(pitch_table, cur_note));
                 } 
-                else if (ch == SQ1_CH)
+                else if(ch == SQ1_CH)
                 {
                     handle_sq1_note(music_data[ch][pattern_number], next_note_distance, pitch_table, cur_note, cur_row_length);
                 }
+                else
+                {
+                    uint8_t note_value = 0;
+                    if (cur_instrument == -2)
+                    {
+                        note_value = 0x04; //silence note
+                    }
+                    else
+                    {
+                        FtTXT::FtInst instrument = file.get_FtInst(cur_instrument);
+                        for (int i = 0; i < 3; i++)
+                        {
+                            if (noise_inst_names[i] == instrument.name) note_value = noise_inst_values[i];
+                        }
+                        if (note_value == 0)
+                        {
+                            std::cout << std::format("ERROR at ch:{}, pattern:{} | {:02X}:\"{}\" is not a valid noise instrument name!\n", ch, pattern_number, cur_instrument, instrument.name);
+                            std::cout << "Make sure your noise instrument is named KICK, HIHAT or SNARE.";
+                            return -1;
+                        }
+                    }
+                    handle_noi_note(music_data[ch][pattern_number], next_note_distance, note_value, cur_row_length);
+                }
             }
-            ofile << std::format("\n\n{}_{}_{}:\n", file.track_name, channel_names[ch], pattern_number);
-            write_to_file(ofile, music_data[ch][pattern_number].data(), music_data[ch][pattern_number].size(), 16);
-
             file.pattern_done(ch, order_no);
         }
     }

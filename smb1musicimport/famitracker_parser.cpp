@@ -174,6 +174,24 @@ bool FtTXT::advance_row(int row_advance)
 	else return false;
 }
 
+int FtTXT::get_instrument(int row_advance_before_note, int row_advance_after_note)
+{
+	if (advance_row(row_advance_before_note) && m_current_row >= 0 && m_current_row < m_pattern_length)
+	{
+		int pos = m_internal_pos;
+		pos = go_to_nth_element(m_selected_ch, ":", pos);
+		advance_row(row_advance_after_note);
+		if (m_content.substr(pos + 6, 2) == "..") return -2; //no instrument specified
+		return stoi(m_content.substr(pos + 6, 2), nullptr, 16);
+	}
+	return -1; //out of bounds row read!
+}
+
+FtTXT::FtInst FtTXT::get_FtInst(int instrument_number)
+{
+	return m_instruments[instrument_number];
+}
+
 std::string FtTXT::get_note(int row_advance_before_note, int row_advance_after_note)
 {
 	if (advance_row(row_advance_before_note) && m_current_row >= 0 && m_current_row < m_pattern_length)

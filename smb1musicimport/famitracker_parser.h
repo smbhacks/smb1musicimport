@@ -4,29 +4,30 @@
 #include <fstream>
 #include <format>
 
-struct FtMacro
-{
-	int purpose;
-	int id;
-	int loop;
-	int release;
-	int chip;
-	std::vector<int> values;
-};
-
-struct FtInst
-{
-	int id;
-	int volume;
-	int arpeggio;
-	int pitch;
-	int hipitch;
-	int duty;
-	std::string name;
-};
-
 class FtTXT
 {
+public:
+	struct FtMacro
+	{
+		int purpose;
+		int id;
+		int loop;
+		int release;
+		int chip;
+		std::vector<int> values;
+	};
+
+	struct FtInst
+	{
+		int id;
+		int volume;
+		int arpeggio;
+		int pitch;
+		int hipitch;
+		int duty;
+		std::string name;
+	};
+
 private:
 	int next_line(int pos);
 	int go_to_nth_element(int nth_element, std::string find_str, int pos = 0);
@@ -57,8 +58,10 @@ public:
 	bool already_did_pattern(int ch, int order_no);
 	int order_to_pattern(int ch, int order_no);
 	int current_row();
+	int get_instrument(int row_advance_before_note = 0, int row_advance_after_note = 1);
 	std::string get_note(int row_advance_before_note = 0, int row_advance_after_note = 1);
 	std::vector<std::string> get_effects(int row_advance_before_note = 0, int row_advance_after_note = 1);
+	FtInst get_FtInst(int instrument_number);
 
 	int num_of_tracks;
 	int num_of_orders;
