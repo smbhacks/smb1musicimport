@@ -92,11 +92,23 @@ FtTXT::FtTXT(std::string path)
 
 int FtTXT::go_to_nth_element(int nth_element, std::string find_str, int pos)
 {
-	while (nth_element >= 0)
+	if (nth_element >= 0)
 	{
-		pos = m_content.find(find_str, pos + 1);
-		if (pos > m_content.size()) return m_content.size();
-		nth_element--;
+		while (nth_element >= 0)
+		{
+			pos = m_content.find(find_str, pos + 1);
+			if (pos > m_content.size()) return m_content.size();
+			nth_element--;
+		}
+	}
+	else
+	{
+		while (nth_element < 0)
+		{
+			pos = m_content.rfind(find_str, pos - 1);
+			if (pos > m_content.size()) return m_content.size();
+			nth_element++;
+		}
 	}
 	return pos;
 }
@@ -146,19 +158,29 @@ bool FtTXT::go_to_pattern(int ch, int order_no)
 	else return false; //couldnt find pattern!
 }
 
-std::string FtTXT::get_note(int row_advance)
+bool FtTXT::advance_row(int row_advance)
 {
-	int pos = m_internal_pos;
-	pos = go_to_nth_element(m_selected_ch, ":", pos);
-	if (row_advance != 0)
+	if (row_advance == 0) return true;
+	m_current_row += row_advance;
+	if (m_current_row < m_pattern_length && m_current_row >= 0)
 	{
-		m_current_row += row_advance;
-		if (m_current_row < m_pattern_length)
-		{
-			m_internal_pos = go_to_nth_element(row_advance - 1, "ROW", m_internal_pos);
-		}
+		if (row_advance > 0) row_advance--;
+		m_internal_pos = go_to_nth_element(row_advance, "ROW", m_internal_pos);
+		return true;
 	}
-	return m_content.substr(pos + 2, 3);
+	else return false;
+}
+
+std::string FtTXT::get_note(int row_advance_before_note, int row_advance_after_note)
+{
+	if (advance_row(row_advance_before_note))
+	{
+		int pos = m_internal_pos;
+		pos = go_to_nth_element(m_selected_ch, ":", pos);
+		advance_row(row_advance_after_note);
+		return m_content.substr(pos + 2, 3);
+	}
+	return "ERR"; //out of bounds row read!
 }
 
 std::vector<std::string> FtTXT::get_effects(int row_advance)
@@ -183,6 +205,11 @@ std::vector<std::string> FtTXT::get_effects(int row_advance)
 		}
 	}
 	return effects;
+}
+
+int FtTXT::current_row()
+{
+	return m_current_row;
 }
 
 void FtTXT::pattern_done(int ch, int order_no)

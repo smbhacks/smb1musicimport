@@ -30,6 +30,7 @@ class FtTXT
 private:
 	int next_line(int pos);
 	int go_to_nth_element(int nth_element, std::string find_str, int pos = 0);
+	bool advance_row(int row_advance);
 	std::string get_string(int& pos);
 
 	const char* InstrumentsLabel = "# Instruments";
@@ -55,7 +56,8 @@ public:
 	bool end_of_pattern();
 	bool already_did_pattern(int ch, int order_no);
 	int order_to_pattern(int ch, int order_no);
-	std::string get_note(int row_advance = 1);
+	int current_row();
+	std::string get_note(int row_advance_before_note = 0, int row_advance_after_note = 1);
 	std::vector<std::string> get_effects(int row_advance = 1);
 
 	int num_of_tracks;
