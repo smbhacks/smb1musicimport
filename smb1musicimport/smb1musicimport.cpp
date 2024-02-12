@@ -150,12 +150,13 @@ const enum ExportMode
 };
 int main(int argc, char* argv[])
 {
-    if (argc < 5)
+    if (argc < 6)
     {
-        std::cout << "\nUsage: [textexport.txt] [pitch_table.asm] [song number] [-studsbase]/[-pattern -o/-u]/[-singlepattern]";
+        std::cout << "\nUsage: [textexport.txt] [pitch_table.asm] [output.asm] [song number] [-studsbase]/[-pattern -o/-u]/[-singlepattern]";
         std::cout << "\n[textexport.txt]: Path to the .txt file exported by Famitracker.";
         std::cout << "\n[pitch_table.asm]: Path to the pitch lookup table file. \nThe parser gets note values from here based on the text row numbers!";
         std::cout << "\n[song number]: Song number in the module. 0 means every song";
+        std::cout << "\n[output.asm]: Path where the result should be saved.";
         std::cout << "\n-studsbase: Export for the studsbase SMB1 base.";
         std::cout << "\n-pattern -o/-u: Export pattern music data. Takes in an extra argument for the noise patterns:";
         std::cout << "\n\t-o: Optimize noise pattern with the 00 music data at the end (repeat from start)";
@@ -164,26 +165,36 @@ int main(int argc, char* argv[])
         std::cout << "\n";
         return -1;
     }
-    int input_track_number = atoi(argv[3]) - 1;
+    int input_track_number = atoi(argv[4]) - 1;
     ExportMode export_mode = Undefined;
     bool export_optimized = false;
-    if (std::strcmp(argv[4], "-studsbase"))
+    if (std::strcmp(argv[5], "-studsbase") == 0)
     {
         export_mode = StudsBase;
     }
-    else if (std::strcmp(argv[4], "-pattern"))
+    else if (std::strcmp(argv[5], "-pattern") == 0)
     {
+        export_mode = Pattern;
         if (argc < 6)
         {
-            std::cout << "\nPlease specify whether you want the pattern export be optimized or not with the -o and -u parameters!\n";
+            std::cout << "Please specify whether you want the pattern export be optimized or not with the -o and -u parameters!";
             return -1;
         }
-        if (std::strcmp(argv[5], "-o")) export_optimized = true;
-        else if (std::strcmp(argv[5], "-u")) export_optimized = false;
+        if (std::strcmp(argv[6], "-o") == 0) export_optimized = true;
+        else if (std::strcmp(argv[6], "-u") == 0) export_optimized = false;
         else
         {
-            std::cout << "\nERROR: Invalid parameter: " << argv[5] << "\n";
+            std::cout << "ERROR: Invalid parameter: " << argv[6];
+            return -1;
         }
+    }
+    else if (std::strcmp(argv[5], "-singlepattern"))
+    {
+        export_mode = SinglePattern;
+    }
+    else
+    {
+        std::cout << "ERROR: Invalid parameter: " << argv[5];
     }
 
     FtTXT file(argv[1]);
@@ -201,7 +212,7 @@ int main(int argc, char* argv[])
     std::string pitch_table((std::istreambuf_iterator<char>(pfile)), std::istreambuf_iterator<char>());
     pfile.close();
 
-    std::ofstream ofile("music_data.asm");
+    std::ofstream ofile(argv[3]);
     //create MusicLengthLookupTbl
     ofile << "MusicLengthLookupTbl:\n";
     write_to_file(ofile, MusicLengthLookupTbl, 112);
