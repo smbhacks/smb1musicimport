@@ -103,8 +103,7 @@ void handle_noi_note(std::vector<uint8_t>& data, int remaining_rows, int note_va
         }
     }
 }
-//####
-//#########
+
 const int primes[] =
 {
   1, // not actually a prime :)
@@ -116,12 +115,7 @@ const int primes[] =
 std::vector<uint8_t> optimize_noi(std::vector<uint8_t> test)
 {
     if (std::find(std::begin(primes), std::end(primes), test.size()) != std::end(primes)) return test; //if the array size is a prime, then it cant be optimized!
-    int c = 0;
-    do
-    {
-        c++;
-    } while (primes[c] < test.size() / 2);
-    for (int size = 1; size < primes[c-1]+1; size++)
+    for (int size = 1; (size - 1) < test.size()/2; size++)
     {
         if (test.size() % size != 0) continue;
         int window_start = size;
@@ -143,6 +137,8 @@ std::vector<uint8_t> optimize_noi(std::vector<uint8_t> test)
             return optimized;
         }
     }
+    //couldnt find optimization
+    return test;
 }
 
 int main()
@@ -287,6 +283,10 @@ int main()
 
     //now optimize noise data per pattern
     std::vector<std::vector<uint8_t>> optimized_noise_patterns;
-    for (int i = 0; i < music_data[NOI_CH].size(); i++) optimized_noise_patterns.push_back(music_data[NOI_CH][i]); //copy noi data
-
+    for (int i = 0; i < music_data[NOI_CH].size(); i++)
+    {
+        if (music_data[NOI_CH][i].empty()) continue;
+        std::vector<uint8_t> optimized_data = optimize_noi(music_data[NOI_CH][i]);
+        optimized_noise_patterns.push_back(optimized_data);
+    }
 }
