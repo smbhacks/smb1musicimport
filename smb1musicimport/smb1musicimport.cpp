@@ -16,6 +16,18 @@ uint8_t MusicLengthLookupTbl[] =
 uint8_t RowsBase2[8] = { SP_2(1) };
 uint8_t RowsBase3[8] = { SP_3(1) };
 uint8_t UsedRowSizes[8] = { SP_2(1) };
+
+int count_newlines(std::string pitch_table, int p)
+{
+    int newlines = 0;
+    while (p >= 0)
+    {
+        if (pitch_table[p] == '\n') newlines++;
+        p--;
+    }
+    return newlines;
+}
+
 int get_note_value(std::string pitch_table, std::string note, bool sq1 = false)
 {
     int p = pitch_table.find(note);
@@ -25,11 +37,17 @@ int get_note_value(std::string pitch_table, std::string note, bool sq1 = false)
         return -1;
     }
     //count newlines before p
-    int newlines = 0;
-    while (p >= 0)
+    int newlines = count_newlines(pitch_table, p);
+    if (!sq1 && newlines == 0)
     {
-        if (pitch_table[p] == '\n') newlines++;
-        p--;
+        //Trying to access the 0th music note, which is the terminator for SQ2. Try to find it
+        //from the back
+        p = pitch_table.rfind(note);
+        newlines = count_newlines(pitch_table, p);
+        if (newlines == 0) //if still couldnt find it, print out a warning
+        {
+            std::cout << std::format("\nWarning! Note value {} is 0x00 in the SQ2/TRI in the pitch table which is the same as the terminator byte!", note);
+        }
     }
     if(newlines>=64 || (sq1 && newlines >= 32))
     {
@@ -235,8 +253,12 @@ int main(int argc, char* argv[])
         {
             speed_values.push_back(8 * (file.track_speed - 1 + 7));
             for (int i = 0; i < 8; i++) UsedRowSizes[i] = RowsBase3[i];
-        } else speed_values.push_back(8 * (file.track_speed - 1));
-
+        } 
+        else
+        {
+            speed_values.push_back(8 * (file.track_speed - 1));
+            for (int i = 0; i < 8; i++) UsedRowSizes[i] = RowsBase2[i];
+        }
         //handle actual parsing
         file.select_track(input_track_number);
         for (int ch = 0; ch < 4; ch++)

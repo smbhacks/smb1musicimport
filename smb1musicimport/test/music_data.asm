@@ -231,44 +231,44 @@ WaterMus_PatternsLow:
 	.dl WaterMus_SQ1_CH_p7, WaterMus_SQ2_CH_p7, WaterMus_TRI_CH_p6, WaterMus_NOI_CH_p0
 
 WaterMus_SQ1_CH_p0:
-	.db $D8, $D6, $D4, $D2, $D4, $D6, $58, $58, $58, $44, $5C, $44, $1F, $C4, $44
+	.db $D8, $D6, $D4, $D2, $D4, $D6, $58, $58, $58, $44, $5C, $44, $1F, $44, $44
 
 WaterMus_SQ1_CH_p1:
-	.db $63, $61, $E3
+	.db $63, $61, $A3, $05
 
 WaterMus_SQ1_CH_p2:
-	.db $63, $21, $44, $E6, $E3
+	.db $63, $21, $E6, $A3, $05
 
 WaterMus_SQ1_CH_p3:
-	.db $5F, $5D, $DF
+	.db $5F, $5D, $9F, $05
 
 WaterMus_SQ1_CH_p4:
-	.db $5F, $13, $44, $E6, $E3
+	.db $5F, $13, $E6, $A3, $05
 
 WaterMus_SQ1_CH_p5:
-	.db $75, $71, $EF
+	.db $75, $71, $AF, $05
 
 WaterMus_SQ1_CH_p6:
-	.db $71, $6F, $ED
+	.db $71, $6F, $AD, $05
 
 WaterMus_SQ1_CH_p7:
-	.db $55, $DE, $E2, $EA, $6A, $6A, $2B, $5E, $5D
+	.db $55, $DE, $E2, $EA, $6A, $6A, $EA, $44, $5E, $5D
 
 WaterMus_SQ2_CH_p0:
 	.db $83, $18, $1C, $20, $22, $26, $28, $81, $2A, $2A, $2A, $04, $2A, $04, $84, $2A
-	.db $81, $04, $83, $22, $00
+	.db $83, $22, $00
 
 WaterMus_SQ2_CH_p1:
 	.db $85, $34, $32, $34, $81, $04, $22, $26, $2A, $2C, $30, $00
 
 WaterMus_SQ2_CH_p2:
-	.db $85, $34, $84, $32, $81, $04, $83, $36, $86, $34, $83, $04, $81, $22, $00
+	.db $85, $34, $84, $32, $83, $36, $86, $34, $83, $04, $81, $04, $22, $00
 
 WaterMus_SQ2_CH_p3:
 	.db $85, $30, $2E, $30, $81, $04, $22, $26, $2A, $2C, $2E, $00
 
 WaterMus_SQ2_CH_p4:
-	.db $85, $30, $84, $22, $81, $04, $83, $36, $86, $34, $83, $04, $81, $22, $00
+	.db $85, $30, $84, $22, $83, $36, $86, $34, $83, $04, $81, $04, $22, $00
 
 WaterMus_SQ2_CH_p5:
 	.db $85, $3A, $3A, $3A, $83, $3A, $81, $40, $83, $04, $81, $3A, $00
@@ -277,10 +277,11 @@ WaterMus_SQ2_CH_p6:
 	.db $85, $36, $36, $36, $83, $36, $81, $3A, $83, $04, $81, $36, $00
 
 WaterMus_SQ2_CH_p7:
-	.db $85, $34, $83, $26, $2A, $36, $81, $34, $34, $84, $34, $81, $2A, $85, $2C, $00
+	.db $85, $34, $83, $26, $2A, $36, $81, $34, $34, $83, $34, $81, $04, $2A, $85, $2C
+	.db $00
 
 WaterMus_TRI_CH_p0:
-	.db $87, $04, $84, $04, $81, $04, $22, $04, $85, $22
+	.db $87, $04, $81, $22, $04, $85, $22
 
 WaterMus_TRI_CH_p1:
 	.db $81, $14, $04, $22, $04, $2C, $04, $12, $04, $22, $04, $2A, $04, $14, $04, $22
@@ -303,11 +304,11 @@ WaterMus_TRI_CH_p5:
 	.db $04, $36, $04, $12, $04, $22, $04, $36, $04
 
 WaterMus_TRI_CH_p6:
-	.db $81, $5C, $04, $22, $04, $34, $04, $0C, $04, $22, $04, $22, $04, $84, $1E, $83
-	.db $04, $81, $12, $85, $14
+	.db $81, $5C, $04, $22, $04, $34, $04, $0C, $04, $22, $04, $22, $04, $84, $1E, $81
+	.db $04, $12, $85, $14
 
 WaterMus_NOI_CH_p0:
-	.db $C4, $D0, $31, $44, $50, $50, $31, $44, $D0, $31, $44, $50, $50, $F0, $00
+	.db $C4, $D0, $31, $50, $50, $31, $D0, $31, $50, $50, $F0, $00
 
 UndergroundMus_PatternsHigh:
 	.dh UndergroundMus_SQ1_CH_p0, UndergroundMus_SQ2_CH_p0, UndergroundMus_TRI_CH_p0, UndergroundMus_NOI_CH_p0
@@ -317,13 +318,13 @@ UndergroundMus_PatternsLow:
 	.dl UndergroundMus_SQ1_CH_p0, UndergroundMus_SQ2_CH_p0, UndergroundMus_TRI_CH_p0, UndergroundMus_NOI_CH_p0
 
 UndergroundMus_SQ1_CH_p0:
-	.db $76, $76, $72, $6E, $2D, $6C, $6E, $6E, $6C, $68, $25, $5E, $60, $62, $64, $66
-	.db $68, $6C, $6E, $72, $F6, $EE, $37, $56
+	.db $76, $76, $72, $6E, $EC, $44, $6C, $6E, $6E, $6C, $68, $E4, $44, $5E, $60, $62
+	.db $64, $66, $68, $6C, $6E, $72, $F6, $EE, $F6, $44, $56
 
 UndergroundMus_SQ2_CH_p0:
-	.db $81, $46, $46, $64, $3E, $84, $00, $81, $00, $3E, $3E, $00, $38, $84, $36, $81
-	.db $2E, $32, $34, $36, $38, $3A, $00, $3E, $64, $83, $46, $4C, $84, $46, $81, $00
-	.db $00
+	.db $81, $46, $46, $64, $3E, $83, $3C, $81, $04, $3C, $3E, $3E, $3C, $38, $83, $36
+	.db $81, $04, $2E, $32, $34, $36, $38, $3A, $3C, $3E, $64, $83, $46, $4C, $46, $81
+	.db $04, $3C, $00
 
 UndergroundMus_TRI_CH_p0:
 	.db $81, $16, $80, $2E, $2E, $81, $16, $80, $2E, $2E, $81, $16, $80, $2E, $2E, $81
@@ -374,22 +375,22 @@ CastleMus_SQ2_CH_p2:
 	.db $2E, $00
 
 CastleMus_TRI_CH_p0:
-	.db $85, $1A, $83, $04, $84, $18, $81, $04, $84, $20, $81, $04
+	.db $86, $1A, $84, $18, $20
 
 CastleMus_TRI_CH_p1:
-	.db $85, $1E, $83, $04, $84, $1C, $81, $04, $84, $28, $81, $04
+	.db $86, $1E, $84, $1C, $28
 
 CastleMus_TRI_CH_p2:
-	.db $84, $26, $81, $04, $84, $1C, $81, $04, $84, $1A, $81, $04, $84, $1C, $81, $04
+	.db $84, $26, $1C, $1A, $1C
 
 CastleMus_NOI_CH_p0:
-	.db $C5, $05, $44, $00
+	.db $C5, $00
 
 CastleMus_NOI_CH_p1:
-	.db $C5, $05, $44, $00
+	.db $C5, $00
 
 CastleMus_NOI_CH_p2:
-	.db $C5, $05, $44, $00
+	.db $C5, $00
 
 CloudMus_PatternsHigh:
 	.dh CloudMus_SQ1_CH_p0, CloudMus_SQ2_CH_p0, CloudMus_TRI_CH_p0, CloudMus_NOI_CH_p0
@@ -478,16 +479,16 @@ ASilence_PatternsLow:
 	.dl ASilence_SQ1_CH_p0, ASilence_SQ2_CH_p0, ASilence_TRI_CH_p0, ASilence_NOI_CH_p0
 
 ASilence_SQ1_CH_p0:
-	.db $C5, $05, $44
+	.db $C5
 
 ASilence_SQ2_CH_p0:
-	.db $87, $04, $84, $04, $81, $04, $00
+	.db $87, $04, $00
 
 ASilence_TRI_CH_p0:
-	.db $87, $04, $84, $04, $81, $04
+	.db $87, $04
 
 ASilence_NOI_CH_p0:
-	.db $C5, $05, $44, $00
+	.db $C5, $00
 
 DeathMus_PatternsHigh:
 	.dh DeathMus_SQ1_CH_p0, DeathMus_SQ2_CH_p0, DeathMus_TRI_CH_p0, DeathMus_NOI_CH_p0
@@ -555,19 +556,19 @@ VictoryMus_PatternsLow:
 	.dl VictoryMus_SQ1_CH_p2, VictoryMus_SQ2_CH_p2, VictoryMus_TRI_CH_p2, VictoryMus_NOI_CH_p2
 
 VictoryMus_SQ1_CH_p0:
-	.db $E2, $E0, $E3, $C5, $C5, $45, $C4
+	.db $E2, $E0, $E3, $C5, $85, $05
 
 VictoryMus_SQ1_CH_p1:
-	.db $DD, $5F, $61, $E3, $6D, $35, $84, $B4
+	.db $9D, $05, $5F, $61, $A3, $05, $6D, $35, $04, $B4
 
 VictoryMus_SQ1_CH_p2:
-	.db $71, $75, $77, $6B, $F1, $6D, $E2, $E0, $E2
+	.db $71, $75, $77, $6B, $B1, $05, $6D, $E2, $E0, $E2
 
 VictoryMus_SQ2_CH_p0:
-	.db $87, $04, $04, $04, $04, $00
+	.db $87, $04, $04, $04, $00
 
 VictoryMus_SQ2_CH_p1:
-	.db $87, $0C, $85, $62, $10, $87, $12, $85, $1C, $22, $00
+	.db $86, $0C, $84, $04, $85, $62, $10, $86, $12, $84, $04, $85, $1C, $22, $00
 
 VictoryMus_SQ2_CH_p2:
 	.db $85, $1E, $22, $26, $18, $1E, $04, $1C, $04, $00
@@ -576,19 +577,19 @@ VictoryMus_TRI_CH_p0:
 	.db $85, $12
 
 VictoryMus_TRI_CH_p1:
-	.db $87, $14, $85, $18, $1A, $1C, $14, $26, $22
+	.db $86, $14, $84, $04, $85, $18, $1A, $1C, $14, $26, $22
 
 VictoryMus_TRI_CH_p2:
 	.db $85, $1E, $1C, $18, $1E, $22, $0C, $14, $12
 
 VictoryMus_NOI_CH_p0:
-	.db $C5, $00
+	.db $C5, $C5, $C5, $00
 
 VictoryMus_NOI_CH_p1:
-	.db $C5, $00
+	.db $C5, $C5, $C5, $00
 
 VictoryMus_NOI_CH_p2:
-	.db $C5, $00
+	.db $C5, $C5, $C5, $00
 
 WinCastleMus_PatternsHigh:
 	.dh WinCastleMus_SQ1_CH_p0, WinCastleMus_SQ2_CH_p0, WinCastleMus_TRI_CH_p0, WinCastleMus_NOI_CH_p0
@@ -604,16 +605,15 @@ WinCastleMus_SQ1_CH_p0:
 	.db $5E, $56, $4E, $5E, $1E, $1E, $5E, $5E, $5E, $5E
 
 WinCastleMus_SQ1_CH_p1:
-	.db $62, $5A, $50, $62, $5A, $50, $62, $22, $22, $62, $A6, $A6, $A6, $6B, $C4, $C4
-	.db $04
+	.db $62, $5A, $50, $62, $5A, $50, $62, $22, $22, $62, $A6, $A6, $A6, $AB, $C4, $04
 
 WinCastleMus_SQ2_CH_p0:
 	.db $81, $2C, $22, $1C, $2C, $22, $1C, $85, $2C, $81, $2E, $24, $1E, $2E, $24, $1E
 	.db $85, $2E, $00
 
 WinCastleMus_SQ2_CH_p1:
-	.db $81, $32, $28, $22, $32, $28, $22, $84, $32, $82, $36, $36, $36, $85, $3A, $83
-	.db $04, $04, $80, $04, $00
+	.db $81, $32, $28, $22, $32, $28, $22, $83, $32, $81, $04, $82, $36, $36, $36, $86
+	.db $3A, $83, $04, $80, $04, $00
 
 WinCastleMus_TRI_CH_p0:
 	.db $85, $14, $80, $04, $04, $82, $14, $80, $04, $14, $04, $14, $04, $14, $04, $85
@@ -621,14 +621,14 @@ WinCastleMus_TRI_CH_p0:
 
 WinCastleMus_TRI_CH_p1:
 	.db $80, $28, $04, $22, $04, $1A, $04, $28, $04, $22, $04, $1A, $04, $28, $04, $82
-	.db $28, $80, $04, $2C, $81, $04, $80, $2C, $81, $04, $80, $2C, $81, $04, $85, $30
-	.db $83, $04, $04, $80, $04
+	.db $28, $80, $04, $2C, $81, $04, $80, $2C, $81, $04, $80, $2C, $81, $04, $86, $30
+	.db $83, $04, $80, $04
 
 WinCastleMus_NOI_CH_p0:
-	.db $C5, $C5, $00
+	.db $C5, $85, $00
 
 WinCastleMus_NOI_CH_p1:
-	.db $C5, $C5, $00
+	.db $C5, $85, $00
 
 UnusedSlot_PatternsHigh:
 	.dh UnusedSlot_SQ1_CH_p0, UnusedSlot_SQ2_CH_p0, UnusedSlot_TRI_CH_p0, UnusedSlot_NOI_CH_p0
@@ -638,16 +638,16 @@ UnusedSlot_PatternsLow:
 	.dl UnusedSlot_SQ1_CH_p0, UnusedSlot_SQ2_CH_p0, UnusedSlot_TRI_CH_p0, UnusedSlot_NOI_CH_p0
 
 UnusedSlot_SQ1_CH_p0:
-	.db $C5, $05, $44
+	.db $C5
 
 UnusedSlot_SQ2_CH_p0:
-	.db $87, $04, $84, $04, $81, $04, $00
+	.db $87, $04, $00
 
 UnusedSlot_TRI_CH_p0:
-	.db $87, $04, $84, $04, $81, $04
+	.db $87, $04
 
 UnusedSlot_NOI_CH_p0:
-	.db $C5, $05, $44, $00
+	.db $C5, $00
 
 EndOfLevelMus_PatternsHigh:
 	.dh EndOfLevelMus_SQ1_CH_p0, EndOfLevelMus_SQ2_CH_p0, EndOfLevelMus_TRI_CH_p0, EndOfLevelMus_NOI_CH_p0
@@ -659,31 +659,33 @@ EndOfLevelMus_PatternsLow:
 	.dl EndOfLevelMus_SQ1_CH_p1, EndOfLevelMus_SQ2_CH_p1, EndOfLevelMus_TRI_CH_p1, EndOfLevelMus_NOI_CH_p1
 
 EndOfLevelMus_SQ1_CH_p0:
-	.db $4C, $54, $5C, $62, $6C, $74, $3B, $35, $4E, $54, $5A, $64, $6C, $72, $01, $33
+	.db $4C, $54, $5C, $62, $6C, $74, $FA, $44, $F4, $44, $4E, $54, $5A, $64, $6C, $72
+	.db $C0, $44, $F2, $44
 
 EndOfLevelMus_SQ1_CH_p1:
-	.db $50, $58, $5E, $68, $70, $76, $3F, $7E, $7E, $7E, $35, $84, $45, $84
+	.db $50, $58, $5E, $68, $70, $76, $FE, $44, $7E, $7E, $7E, $35, $04, $45, $84
 
 EndOfLevelMus_SQ2_CH_p0:
-	.db $81, $04, $06, $0C, $14, $1C, $22, $84, $2C, $22, $81, $04, $60, $0E, $14, $1A
-	.db $24, $84, $2C, $24, $00
+	.db $81, $04, $06, $0C, $14, $1C, $22, $83, $2C, $81, $04, $83, $22, $81, $04, $04
+	.db $60, $0E, $14, $1A, $24, $83, $2C, $81, $04, $83, $24, $81, $04, $00
 
 EndOfLevelMus_SQ2_CH_p1:
-	.db $81, $04, $08, $10, $18, $1E, $28, $84, $30, $30, $64, $82, $04, $85, $04, $82
-	.db $04, $00
+	.db $81, $04, $08, $10, $18, $1E, $28, $83, $30, $81, $04, $83, $30, $81, $04, $84
+	.db $64, $80, $04, $85, $04, $82, $04, $00
 
 EndOfLevelMus_TRI_CH_p0:
-	.db $84, $04, $81, $14, $1C, $22, $84, $34, $81, $2C, $84, $04, $83, $04, $81, $14
-	.db $1A, $24, $84, $32, $81, $2C, $83, $04
+	.db $83, $04, $81, $04, $14, $1C, $22, $83, $34, $81, $04, $2C, $84, $04, $81, $04
+	.db $14, $1A, $24, $83, $32, $81, $04, $2C, $83, $04
 
 EndOfLevelMus_TRI_CH_p1:
-	.db $84, $04, $81, $18, $1E, $28, $84, $36, $30, $2C, $82, $04, $85, $04, $82, $04
+	.db $83, $04, $81, $04, $18, $1E, $28, $83, $36, $81, $04, $83, $30, $81, $04, $84
+	.db $2C, $80, $04, $85, $04, $82, $04
 
 EndOfLevelMus_NOI_CH_p0:
-	.db $C5, $C5, $00
+	.db $C5, $85, $00
 
 EndOfLevelMus_NOI_CH_p1:
-	.db $C5, $C5, $00
+	.db $C5, $85, $00
 
 TimeRunningOut_PatternsHigh:
 	.dh TimeRunningOut_SQ1_CH_p0, TimeRunningOut_SQ2_CH_p0, TimeRunningOut_TRI_CH_p0, TimeRunningOut_NOI_CH_p0
@@ -693,18 +695,18 @@ TimeRunningOut_PatternsLow:
 	.dl TimeRunningOut_SQ1_CH_p0, TimeRunningOut_SQ2_CH_p0, TimeRunningOut_TRI_CH_p0, TimeRunningOut_NOI_CH_p0
 
 TimeRunningOut_SQ1_CH_p0:
-	.db $46, $E4, $64, $E4, $48, $E6, $66, $E6, $4A, $E8, $68, $E8, $EA, $6B, $C4
+	.db $46, $E4, $64, $E4, $48, $E6, $66, $E6, $4A, $E8, $68, $E8, $EA, $AB
 
 TimeRunningOut_SQ2_CH_p0:
 	.db $81, $1C, $83, $30, $81, $30, $83, $30, $81, $1E, $83, $32, $81, $32, $83, $32
-	.db $81, $20, $83, $34, $81, $34, $83, $34, $36, $85, $36, $83, $04, $00
+	.db $81, $20, $83, $34, $81, $34, $83, $34, $36, $86, $36, $00
 
 TimeRunningOut_TRI_CH_p0:
 	.db $81, $2A, $42, $04, $42, $42, $04, $2C, $64, $04, $64, $64, $04, $2E, $46, $04
-	.db $46, $46, $04, $22, $04, $84, $22, $83, $04, $80, $04, $83, $04, $80, $04
+	.db $46, $46, $04, $22, $04, $84, $22, $82, $04, $83, $04, $80, $04
 
 TimeRunningOut_NOI_CH_p0:
-	.db $C5, $C5, $05, $44, $00
+	.db $C5, $85, $05, $00
 
 ESilence_PatternsHigh:
 	.dh ESilence_SQ1_CH_p0, ESilence_SQ2_CH_p0, ESilence_TRI_CH_p0, ESilence_NOI_CH_p0
@@ -714,16 +716,16 @@ ESilence_PatternsLow:
 	.dl ESilence_SQ1_CH_p0, ESilence_SQ2_CH_p0, ESilence_TRI_CH_p0, ESilence_NOI_CH_p0
 
 ESilence_SQ1_CH_p0:
-	.db $C5, $05, $44
+	.db $C5
 
 ESilence_SQ2_CH_p0:
-	.db $87, $04, $84, $04, $81, $04, $00
+	.db $87, $04, $00
 
 ESilence_TRI_CH_p0:
-	.db $87, $04, $84, $04, $81, $04
+	.db $87, $04
 
 ESilence_NOI_CH_p0:
-	.db $C5, $05, $44, $00
+	.db $C5, $00
 
 MusicHeaderData:
 	.db GroundLevelHdr-MHD
