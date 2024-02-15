@@ -62,6 +62,7 @@ void export_to_studsbase(std::ofstream& ofile, std::vector<std::vector<std::vect
     {
         if (music_data[NOI_CH][i].empty()) continue;
         music_data[NOI_CH][i] = optimize_noi(music_data[NOI_CH][i]);
+        music_data[NOI_CH][i].push_back(0);
     }
 
     std::vector<std::string> addresses;
@@ -72,8 +73,12 @@ void export_to_studsbase(std::ofstream& ofile, std::vector<std::vector<std::vect
             addresses.push_back(std::format("{}_{}_p{}", ftfile.track_name, channel_names[ch], ftfile.order_to_pattern(ch, order_no)));
         }
     }
+    
+    addresses.push_back("0");
     ofile << std::format("\n\n{}_PatternsHigh:\n", ftfile.track_name);
     write_to_file_string(ofile, addresses.data(), addresses.size(), 4, ".dh ");
+
+    addresses.pop_back();
     ofile << std::format("\n\n{}_PatternsLow:\n", ftfile.track_name);
     write_to_file_string(ofile, addresses.data(), addresses.size(), 4, ".dl ");
 
@@ -81,8 +86,8 @@ void export_to_studsbase(std::ofstream& ofile, std::vector<std::vector<std::vect
     {
         for (int order_no = 0; order_no < ftfile.num_of_orders; order_no++)
         {
-            if (ftfile.already_did_pattern(ch, order_no) || music_data[ch][order_no].empty()) continue;
             int pattern_number = ftfile.order_to_pattern(ch, order_no);
+            if (ftfile.already_did_pattern(ch, order_no) || music_data[ch][pattern_number].empty()) continue;
             ofile << std::format("\n\n{}_{}_p{}:\n", ftfile.track_name, channel_names[ch], pattern_number);
             write_to_file(ofile, music_data[ch][pattern_number].data(), music_data[ch][pattern_number].size(), 16);
             ftfile.pattern_done(ch, order_no);

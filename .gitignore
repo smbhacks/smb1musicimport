@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+smb1musicimport/test/music másolata.ftm
+smb1musicimport/test/pitch_table másolata.asm

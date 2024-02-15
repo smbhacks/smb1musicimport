@@ -52,6 +52,7 @@ GroundLevel_PatternsHigh:
 	.dh GroundLevel_SQ1_CH_p9, GroundLevel_SQ2_CH_p9, GroundLevel_TRI_CH_p8, GroundLevel_NOI_CH_p2
 	.dh GroundLevel_SQ1_CH_p8, GroundLevel_SQ2_CH_p8, GroundLevel_TRI_CH_p7, GroundLevel_NOI_CH_p2
 	.dh GroundLevel_SQ1_CH_p10, GroundLevel_SQ2_CH_p10, GroundLevel_TRI_CH_p9, GroundLevel_NOI_CH_p2
+	.dh 0
 
 GroundLevel_PatternsLow:
 	.dl GroundLevel_SQ1_CH_p0, GroundLevel_SQ2_CH_p0, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p0
@@ -110,6 +111,21 @@ GroundLevel_SQ1_CH_p4:
 GroundLevel_SQ1_CH_p5:
 	.db $05, $25, $84, $1F, $84, $DD
 
+GroundLevel_SQ1_CH_p6:
+	.db $A4, $25, $25, $A4, $29, $A2, $1D, $9C, $55
+
+GroundLevel_SQ1_CH_p7:
+	.db $A4, $25, $25, $A4, $A8, $E3, $84
+
+GroundLevel_SQ1_CH_p8:
+	.db $AC, $27, $1D, $84, $1D, $9E, $2D, $AC, $5F
+
+GroundLevel_SQ1_CH_p9:
+	.db $E2, $F6, $F6, $F6, $F4, $F0, $EC, $E6, $DE, $5D
+
+GroundLevel_SQ1_CH_p10:
+	.db $E2, $F0, $04, $B0, $F0, $EC, $EA, $A2, $1D, $9C, $55
+
 GroundLevel_SQ2_CH_p0:
 	.db $82, $34, $84, $34, $34, $82, $2C, $84, $34, $87, $3A, $00
 
@@ -130,6 +146,23 @@ GroundLevel_SQ2_CH_p4:
 
 GroundLevel_SQ2_CH_p5:
 	.db $84, $04, $32, $82, $04, $84, $30, $82, $04, $87, $2C, $00
+
+GroundLevel_SQ2_CH_p6:
+	.db $82, $2C, $84, $2C, $2C, $82, $2C, $84, $30, $82, $34, $84, $2C, $82, $26, $85
+	.db $22, $00
+
+GroundLevel_SQ2_CH_p7:
+	.db $82, $2C, $84, $2C, $2C, $82, $2C, $30, $87, $34, $82, $04, $00
+
+GroundLevel_SQ2_CH_p8:
+	.db $82, $34, $84, $2C, $22, $82, $04, $84, $24, $82, $26, $84, $36, $82, $36, $85
+	.db $26, $00
+
+GroundLevel_SQ2_CH_p9:
+	.db $83, $2A, $40, $40, $40, $3A, $36, $34, $2C, $26, $85, $22, $00
+
+GroundLevel_SQ2_CH_p10:
+	.db $83, $2A, $36, $80, $04, $82, $36, $83, $36, $34, $30, $87, $2C, $00
 
 GroundLevel_TRI_CH_p0:
 	.db $82, $18, $84, $18, $18, $82, $18, $84, $18, $85, $3A, $22
@@ -154,11 +187,27 @@ GroundLevel_TRI_CH_p5:
 	.db $84, $14, $24, $82, $04, $84, $28, $82, $04, $84, $2C, $82, $04, $22, $84, $22
 	.db $14
 
+GroundLevel_TRI_CH_p6:
+	.db $84, $0E, $82, $04, $84, $1A, $82, $04, $84, $24, $22, $82, $04, $84, $14, $82
+	.db $04, $84, $0C
+
+GroundLevel_TRI_CH_p7:
+	.db $84, $14, $82, $04, $20, $84, $22, $2C, $1E, $1E, $82, $2C, $2C, $84, $1E
+
+GroundLevel_TRI_CH_p8:
+	.db $84, $18, $82, $04, $1E, $84, $22, $2A, $22, $22, $82, $2C, $2C, $84, $22
+
+GroundLevel_TRI_CH_p9:
+	.db $84, $22, $82, $04, $22, $83, $22, $26, $2A, $84, $2C, $22, $85, $14
+
 GroundLevel_NOI_CH_p0:
-	.db $31, $90, $31, $90, $31, $31, $84, $31, $90, $90, $90
+	.db $31, $90, $31, $90, $31, $31, $84, $31, $90, $90, $90, $00
 
 GroundLevel_NOI_CH_p1:
-	.db $21, $D0, $50, $31, $D0, $50
+	.db $21, $D0, $50, $31, $D0, $50, $00
+
+GroundLevel_NOI_CH_p2:
+	.db $11, $84, $90, $31, $11, $00
 
 WaterMus_PatternsHigh:
 	.dh WaterMus_SQ1_CH_p0, WaterMus_SQ2_CH_p0, WaterMus_TRI_CH_p0, WaterMus_NOI_CH_p0
@@ -169,6 +218,7 @@ WaterMus_PatternsHigh:
 	.dh WaterMus_SQ1_CH_p5, WaterMus_SQ2_CH_p5, WaterMus_TRI_CH_p4, WaterMus_NOI_CH_p0
 	.dh WaterMus_SQ1_CH_p6, WaterMus_SQ2_CH_p6, WaterMus_TRI_CH_p5, WaterMus_NOI_CH_p0
 	.dh WaterMus_SQ1_CH_p7, WaterMus_SQ2_CH_p7, WaterMus_TRI_CH_p6, WaterMus_NOI_CH_p0
+	.dh 0
 
 WaterMus_PatternsLow:
 	.dl WaterMus_SQ1_CH_p0, WaterMus_SQ2_CH_p0, WaterMus_TRI_CH_p0, WaterMus_NOI_CH_p0
@@ -252,79 +302,44 @@ WaterMus_TRI_CH_p5:
 	.db $81, $18, $04, $26, $04, $36, $04, $16, $04, $26, $04, $36, $04, $14, $04, $26
 	.db $04, $36, $04, $12, $04, $22, $04, $36, $04
 
+WaterMus_TRI_CH_p6:
+	.db $81, $5C, $04, $22, $04, $34, $04, $0C, $04, $22, $04, $22, $04, $84, $1E, $83
+	.db $04, $81, $12, $85, $14
+
 WaterMus_NOI_CH_p0:
-	.db $C4, $D0, $31, $44, $50, $50, $31, $44, $D0, $31, $44, $50, $50, $F0
+	.db $C4, $D0, $31, $44, $50, $50, $31, $44, $D0, $31, $44, $50, $50, $F0, $00
 
 UndergroundMus_PatternsHigh:
 	.dh UndergroundMus_SQ1_CH_p0, UndergroundMus_SQ2_CH_p0, UndergroundMus_TRI_CH_p0, UndergroundMus_NOI_CH_p0
-	.dh UndergroundMus_SQ1_CH_p1, UndergroundMus_SQ2_CH_p1, UndergroundMus_TRI_CH_p1, UndergroundMus_NOI_CH_p1
-	.dh UndergroundMus_SQ1_CH_p2, UndergroundMus_SQ2_CH_p2, UndergroundMus_TRI_CH_p2, UndergroundMus_NOI_CH_p2
-	.dh UndergroundMus_SQ1_CH_p3, UndergroundMus_SQ2_CH_p3, UndergroundMus_TRI_CH_p3, UndergroundMus_NOI_CH_p3
+	.dh 0
 
 UndergroundMus_PatternsLow:
 	.dl UndergroundMus_SQ1_CH_p0, UndergroundMus_SQ2_CH_p0, UndergroundMus_TRI_CH_p0, UndergroundMus_NOI_CH_p0
-	.dl UndergroundMus_SQ1_CH_p1, UndergroundMus_SQ2_CH_p1, UndergroundMus_TRI_CH_p1, UndergroundMus_NOI_CH_p1
-	.dl UndergroundMus_SQ1_CH_p2, UndergroundMus_SQ2_CH_p2, UndergroundMus_TRI_CH_p2, UndergroundMus_NOI_CH_p2
-	.dl UndergroundMus_SQ1_CH_p3, UndergroundMus_SQ2_CH_p3, UndergroundMus_TRI_CH_p3, UndergroundMus_NOI_CH_p3
 
 UndergroundMus_SQ1_CH_p0:
-	.db $C5, $C5, $C5
-
-UndergroundMus_SQ1_CH_p1:
-	.db $C5, $C5, $C5
-
-UndergroundMus_SQ1_CH_p2:
-	.db $C5, $C5, $C5
-
-UndergroundMus_SQ1_CH_p3:
-	.db $C5, $C5, $C5
+	.db $76, $76, $72, $6E, $2D, $6C, $6E, $6E, $6C, $68, $25, $5E, $60, $62, $64, $66
+	.db $68, $6C, $6E, $72, $F6, $EE, $37, $56
 
 UndergroundMus_SQ2_CH_p0:
-	.db $82, $14, $2C, $62, $26, $10, $86, $28, $82, $04, $14, $2C, $62, $26, $10, $86
-	.db $28, $82, $04, $00
-
-UndergroundMus_SQ2_CH_p1:
-	.db $82, $08, $1E, $5E, $18, $60, $86, $1A, $82, $04, $08, $1E, $5E, $18, $60, $85
-	.db $1A, $82, $04, $81, $1A, $18, $16, $00
-
-UndergroundMus_SQ2_CH_p2:
-	.db $84, $14, $1A, $18, $0E, $0C, $16, $81, $14, $20, $1E, $1C, $28, $26, $83, $24
-	.db $1A, $12, $10, $62, $0E, $00
-
-UndergroundMus_SQ2_CH_p3:
-	.db $87, $04, $85, $04, $00
+	.db $81, $46, $46, $64, $3E, $84, $00, $81, $00, $3E, $3E, $00, $38, $84, $36, $81
+	.db $2E, $32, $34, $36, $38, $3A, $00, $3E, $64, $83, $46, $4C, $84, $46, $81, $00
+	.db $00
 
 UndergroundMus_TRI_CH_p0:
-	.db $82, $14, $2C, $62, $26, $10, $86, $28, $82, $04, $14, $2C, $62, $26, $10, $86
-	.db $28, $82, $04
-
-UndergroundMus_TRI_CH_p1:
-	.db $82, $08, $1E, $5E, $18, $60, $86, $1A, $82, $04, $08, $1E, $5E, $18, $60, $85
-	.db $1A, $82, $04, $81, $1A, $18, $16
-
-UndergroundMus_TRI_CH_p2:
-	.db $84, $14, $1A, $18, $0E, $0C, $16, $81, $14, $20, $1E, $1C, $28, $26, $83, $24
-	.db $1A, $12, $10, $62, $0E
-
-UndergroundMus_TRI_CH_p3:
-	.db $87, $04, $04, $04
+	.db $81, $16, $80, $2E, $2E, $81, $16, $80, $2E, $2E, $81, $16, $80, $2E, $2E, $81
+	.db $16, $80, $2E, $2E, $81, $16, $80, $2E, $2E, $81, $16, $80, $2E, $2E, $81, $16
+	.db $80, $2E, $2E, $81, $16, $80, $2E, $2E, $81, $08, $80, $1E, $1E, $81, $0A, $80
+	.db $20, $20, $81, $0E, $80, $24, $24, $81, $10, $80, $28, $28, $81, $16, $80, $2E
+	.db $2E, $81, $16, $80, $2E, $2E, $81, $16, $80, $2E, $2E, $81, $16, $80, $2E, $2E
 
 UndergroundMus_NOI_CH_p0:
-	.db $C5, $C5, $C5
-
-UndergroundMus_NOI_CH_p1:
-	.db $C5, $C5, $C5
-
-UndergroundMus_NOI_CH_p2:
-	.db $C5, $C5, $C5
-
-UndergroundMus_NOI_CH_p3:
-	.db $C5, $C5, $C5
+	.db $60, $10, $10, $70, $10, $10, $00
 
 CastleMus_PatternsHigh:
 	.dh CastleMus_SQ1_CH_p0, CastleMus_SQ2_CH_p0, CastleMus_TRI_CH_p0, CastleMus_NOI_CH_p0
 	.dh CastleMus_SQ1_CH_p1, CastleMus_SQ2_CH_p1, CastleMus_TRI_CH_p1, CastleMus_NOI_CH_p1
 	.dh CastleMus_SQ1_CH_p2, CastleMus_SQ2_CH_p2, CastleMus_TRI_CH_p2, CastleMus_NOI_CH_p2
+	.dh 0
 
 CastleMus_PatternsLow:
 	.dl CastleMus_SQ1_CH_p0, CastleMus_SQ2_CH_p0, CastleMus_TRI_CH_p0, CastleMus_NOI_CH_p0
@@ -368,17 +383,18 @@ CastleMus_TRI_CH_p2:
 	.db $84, $26, $81, $04, $84, $1C, $81, $04, $84, $1A, $81, $04, $84, $1C, $81, $04
 
 CastleMus_NOI_CH_p0:
-	.db $C5, $05, $44
+	.db $C5, $05, $44, $00
 
 CastleMus_NOI_CH_p1:
-	.db $C5, $05, $44
+	.db $C5, $05, $44, $00
 
 CastleMus_NOI_CH_p2:
-	.db $C5, $05, $44
+	.db $C5, $05, $44, $00
 
 CloudMus_PatternsHigh:
 	.dh CloudMus_SQ1_CH_p0, CloudMus_SQ2_CH_p0, CloudMus_TRI_CH_p0, CloudMus_NOI_CH_p0
 	.dh CloudMus_SQ1_CH_p1, CloudMus_SQ2_CH_p1, CloudMus_TRI_CH_p1, CloudMus_NOI_CH_p0
+	.dh 0
 
 CloudMus_PatternsLow:
 	.dl CloudMus_SQ1_CH_p0, CloudMus_SQ2_CH_p0, CloudMus_TRI_CH_p0, CloudMus_NOI_CH_p0
@@ -403,10 +419,11 @@ CloudMus_TRI_CH_p1:
 	.db $85, $14, $84, $22, $82, $04, $85, $2C, $82, $04, $84, $22, $2C
 
 CloudMus_NOI_CH_p0:
-	.db $21, $D0, $50, $31, $D0, $50
+	.db $21, $D0, $50, $31, $D0, $50, $00
 
 PipeMus_PatternsHigh:
 	.dh PipeMus_SQ1_CH_p0, PipeMus_SQ2_CH_p0, PipeMus_TRI_CH_p0, PipeMus_NOI_CH_p0
+	.dh 0
 
 PipeMus_PatternsLow:
 	.dl PipeMus_SQ1_CH_p0, PipeMus_SQ2_CH_p0, PipeMus_TRI_CH_p0, PipeMus_NOI_CH_p0
@@ -421,11 +438,12 @@ PipeMus_TRI_CH_p0:
 	.db $82, $18, $84, $18, $18, $82, $18, $84, $18, $85, $3A, $22
 
 PipeMus_NOI_CH_p0:
-	.db $31, $90, $31, $90, $31, $31, $84, $31, $90, $90, $90
+	.db $31, $90, $31, $90, $31, $31, $84, $31, $90, $90, $90, $00
 
 StarMus_PatternsHigh:
 	.dh StarMus_SQ1_CH_p0, StarMus_SQ2_CH_p0, StarMus_TRI_CH_p0, StarMus_NOI_CH_p0
 	.dh StarMus_SQ1_CH_p1, StarMus_SQ2_CH_p1, StarMus_TRI_CH_p1, StarMus_NOI_CH_p0
+	.dh 0
 
 StarMus_PatternsLow:
 	.dl StarMus_SQ1_CH_p0, StarMus_SQ2_CH_p0, StarMus_TRI_CH_p0, StarMus_NOI_CH_p0
@@ -450,20 +468,31 @@ StarMus_TRI_CH_p1:
 	.db $85, $14, $84, $22, $82, $04, $85, $2C, $82, $04, $84, $22, $2C
 
 StarMus_NOI_CH_p0:
-	.db $21, $D0, $50, $31, $D0, $50
+	.db $21, $D0, $50, $31, $D0, $50, $00
 
 ASilence_PatternsHigh:
 	.dh ASilence_SQ1_CH_p0, ASilence_SQ2_CH_p0, ASilence_TRI_CH_p0, ASilence_NOI_CH_p0
+	.dh 0
 
 ASilence_PatternsLow:
 	.dl ASilence_SQ1_CH_p0, ASilence_SQ2_CH_p0, ASilence_TRI_CH_p0, ASilence_NOI_CH_p0
 
+ASilence_SQ1_CH_p0:
+	.db $C5, $05, $44
+
 ASilence_SQ2_CH_p0:
-	.db $00
+	.db $87, $04, $84, $04, $81, $04, $00
+
+ASilence_TRI_CH_p0:
+	.db $87, $04, $84, $04, $81, $04
+
+ASilence_NOI_CH_p0:
+	.db $C5, $05, $44, $00
 
 DeathMus_PatternsHigh:
 	.dh DeathMus_SQ1_CH_p0, DeathMus_SQ2_CH_p0, DeathMus_TRI_CH_p0, DeathMus_NOI_CH_p0
 	.dh DeathMus_SQ1_CH_p1, DeathMus_SQ2_CH_p1, DeathMus_TRI_CH_p1, DeathMus_NOI_CH_p1
+	.dh 0
 
 DeathMus_PatternsLow:
 	.dl DeathMus_SQ1_CH_p0, DeathMus_SQ2_CH_p0, DeathMus_TRI_CH_p0, DeathMus_NOI_CH_p0
@@ -488,13 +517,14 @@ DeathMus_TRI_CH_p1:
 	.db $84, $22, $82, $04, $22, $83, $22, $26, $2A, $84, $2C, $22, $14, $82, $04
 
 DeathMus_NOI_CH_p0:
-	.db $45
+	.db $45, $00
 
 DeathMus_NOI_CH_p1:
-	.db $C5, $85, $84
+	.db $C5, $85, $84, $00
 
 GameOverMus_PatternsHigh:
 	.dh GameOverMus_SQ1_CH_p0, GameOverMus_SQ2_CH_p0, GameOverMus_TRI_CH_p0, GameOverMus_NOI_CH_p0
+	.dh 0
 
 GameOverMus_PatternsLow:
 	.dl GameOverMus_SQ1_CH_p0, GameOverMus_SQ2_CH_p0, GameOverMus_TRI_CH_p0, GameOverMus_NOI_CH_p0
@@ -511,12 +541,13 @@ GameOverMus_TRI_CH_p0:
 	.db $04
 
 GameOverMus_NOI_CH_p0:
-	.db $C5, $C5, $C5, $84
+	.db $C5, $C5, $C5, $84, $00
 
 VictoryMus_PatternsHigh:
 	.dh VictoryMus_SQ1_CH_p0, VictoryMus_SQ2_CH_p0, VictoryMus_TRI_CH_p0, VictoryMus_NOI_CH_p0
 	.dh VictoryMus_SQ1_CH_p1, VictoryMus_SQ2_CH_p1, VictoryMus_TRI_CH_p1, VictoryMus_NOI_CH_p1
 	.dh VictoryMus_SQ1_CH_p2, VictoryMus_SQ2_CH_p2, VictoryMus_TRI_CH_p2, VictoryMus_NOI_CH_p2
+	.dh 0
 
 VictoryMus_PatternsLow:
 	.dl VictoryMus_SQ1_CH_p0, VictoryMus_SQ2_CH_p0, VictoryMus_TRI_CH_p0, VictoryMus_NOI_CH_p0
@@ -551,17 +582,18 @@ VictoryMus_TRI_CH_p2:
 	.db $85, $1E, $1C, $18, $1E, $22, $0C, $14, $12
 
 VictoryMus_NOI_CH_p0:
-	.db $C5
+	.db $C5, $00
 
 VictoryMus_NOI_CH_p1:
-	.db $C5
+	.db $C5, $00
 
 VictoryMus_NOI_CH_p2:
-	.db $C5
+	.db $C5, $00
 
 WinCastleMus_PatternsHigh:
 	.dh WinCastleMus_SQ1_CH_p0, WinCastleMus_SQ2_CH_p0, WinCastleMus_TRI_CH_p0, WinCastleMus_NOI_CH_p0
 	.dh WinCastleMus_SQ1_CH_p1, WinCastleMus_SQ2_CH_p1, WinCastleMus_TRI_CH_p1, WinCastleMus_NOI_CH_p1
+	.dh 0
 
 WinCastleMus_PatternsLow:
 	.dl WinCastleMus_SQ1_CH_p0, WinCastleMus_SQ2_CH_p0, WinCastleMus_TRI_CH_p0, WinCastleMus_NOI_CH_p0
@@ -593,23 +625,34 @@ WinCastleMus_TRI_CH_p1:
 	.db $83, $04, $04, $80, $04
 
 WinCastleMus_NOI_CH_p0:
-	.db $C5, $C5
+	.db $C5, $C5, $00
 
 WinCastleMus_NOI_CH_p1:
-	.db $C5, $C5
+	.db $C5, $C5, $00
 
 UnusedSlot_PatternsHigh:
 	.dh UnusedSlot_SQ1_CH_p0, UnusedSlot_SQ2_CH_p0, UnusedSlot_TRI_CH_p0, UnusedSlot_NOI_CH_p0
+	.dh 0
 
 UnusedSlot_PatternsLow:
 	.dl UnusedSlot_SQ1_CH_p0, UnusedSlot_SQ2_CH_p0, UnusedSlot_TRI_CH_p0, UnusedSlot_NOI_CH_p0
 
+UnusedSlot_SQ1_CH_p0:
+	.db $C5, $05, $44
+
 UnusedSlot_SQ2_CH_p0:
-	.db $00
+	.db $87, $04, $84, $04, $81, $04, $00
+
+UnusedSlot_TRI_CH_p0:
+	.db $87, $04, $84, $04, $81, $04
+
+UnusedSlot_NOI_CH_p0:
+	.db $C5, $05, $44, $00
 
 EndOfLevelMus_PatternsHigh:
 	.dh EndOfLevelMus_SQ1_CH_p0, EndOfLevelMus_SQ2_CH_p0, EndOfLevelMus_TRI_CH_p0, EndOfLevelMus_NOI_CH_p0
 	.dh EndOfLevelMus_SQ1_CH_p1, EndOfLevelMus_SQ2_CH_p1, EndOfLevelMus_TRI_CH_p1, EndOfLevelMus_NOI_CH_p1
+	.dh 0
 
 EndOfLevelMus_PatternsLow:
 	.dl EndOfLevelMus_SQ1_CH_p0, EndOfLevelMus_SQ2_CH_p0, EndOfLevelMus_TRI_CH_p0, EndOfLevelMus_NOI_CH_p0
@@ -637,13 +680,14 @@ EndOfLevelMus_TRI_CH_p1:
 	.db $84, $04, $81, $18, $1E, $28, $84, $36, $30, $2C, $82, $04, $85, $04, $82, $04
 
 EndOfLevelMus_NOI_CH_p0:
-	.db $C5, $C5
+	.db $C5, $C5, $00
 
 EndOfLevelMus_NOI_CH_p1:
-	.db $C5, $C5
+	.db $C5, $C5, $00
 
 TimeRunningOut_PatternsHigh:
 	.dh TimeRunningOut_SQ1_CH_p0, TimeRunningOut_SQ2_CH_p0, TimeRunningOut_TRI_CH_p0, TimeRunningOut_NOI_CH_p0
+	.dh 0
 
 TimeRunningOut_PatternsLow:
 	.dl TimeRunningOut_SQ1_CH_p0, TimeRunningOut_SQ2_CH_p0, TimeRunningOut_TRI_CH_p0, TimeRunningOut_NOI_CH_p0
@@ -660,16 +704,26 @@ TimeRunningOut_TRI_CH_p0:
 	.db $46, $46, $04, $22, $04, $84, $22, $83, $04, $80, $04, $83, $04, $80, $04
 
 TimeRunningOut_NOI_CH_p0:
-	.db $C5, $C5, $05, $44
+	.db $C5, $C5, $05, $44, $00
 
 ESilence_PatternsHigh:
 	.dh ESilence_SQ1_CH_p0, ESilence_SQ2_CH_p0, ESilence_TRI_CH_p0, ESilence_NOI_CH_p0
+	.dh 0
 
 ESilence_PatternsLow:
 	.dl ESilence_SQ1_CH_p0, ESilence_SQ2_CH_p0, ESilence_TRI_CH_p0, ESilence_NOI_CH_p0
 
+ESilence_SQ1_CH_p0:
+	.db $C5, $05, $44
+
 ESilence_SQ2_CH_p0:
-	.db $00
+	.db $87, $04, $84, $04, $81, $04, $00
+
+ESilence_TRI_CH_p0:
+	.db $87, $04, $84, $04, $81, $04
+
+ESilence_NOI_CH_p0:
+	.db $C5, $05, $44, $00
 
 MusicHeaderData:
 	.db GroundLevelHdr-MHD
@@ -691,7 +745,7 @@ MusicHeaderData:
 
 GroundLevelHdr: .db $48, <GroundLevel_PatternsHigh, >GroundLevel_PatternsHigh, <GroundLevel_PatternsLow, >GroundLevel_PatternsLow
 WaterMusHdr: .db $18, <WaterMus_PatternsHigh, >WaterMus_PatternsHigh, <WaterMus_PatternsLow, >WaterMus_PatternsLow
-UndergroundMusHdr: .db $48, <UndergroundMus_PatternsHigh, >UndergroundMus_PatternsHigh, <UndergroundMus_PatternsLow, >UndergroundMus_PatternsLow
+UndergroundMusHdr: .db $28, <UndergroundMus_PatternsHigh, >UndergroundMus_PatternsHigh, <UndergroundMus_PatternsLow, >UndergroundMus_PatternsLow
 CastleMusHdr: .db $20, <CastleMus_PatternsHigh, >CastleMus_PatternsHigh, <CastleMus_PatternsLow, >CastleMus_PatternsLow
 CloudMusHdr: .db $40, <CloudMus_PatternsHigh, >CloudMus_PatternsHigh, <CloudMus_PatternsLow, >CloudMus_PatternsLow
 PipeMusHdr: .db $48, <PipeMus_PatternsHigh, >PipeMus_PatternsHigh, <PipeMus_PatternsLow, >PipeMus_PatternsLow
