@@ -271,6 +271,7 @@ int main(int argc, char* argv[])
                 int pattern_number = file.order_to_pattern(ch, order_no);
                 int cur_row_length = -1;
                 bool cutoff_effect = false;
+                bool sweep_effect_put_down = false;
                 int cutoff_goto_value = -1; //this is set by a Bxx effect, -1 means it's just the end of the pattern
 
                 while (!file.end_of_pattern() && !cutoff_effect)
@@ -278,6 +279,22 @@ int main(int argc, char* argv[])
                     int next_note_distance = 0;
                     std::string cur_note = file.get_note(0, 0);
                     int cur_instrument = file.get_instrument(0, 0);
+
+                    std::vector<std::string> cur_effects = file.get_effects(0, 0);
+                    for (auto& effect : cur_effects)
+                    { 
+                        if (effect[0] == 'I' && !sweep_effect_put_down)
+                        {
+                            if (effect != "I14") std::cout << "Warning. Sweep effect can only be I14!";
+                            else if (ch == SQ1_CH)
+                            {
+                                music_data[ch][pattern_number].push_back(0);
+                                sweep_effect_put_down = true;
+                            }
+                            else std::cout << "Warning. Sweep effect can only be used on SQ1.";
+                        }
+                    }
+                    
                     int t = file.current_row();
                     std::string check_note;
                     do
