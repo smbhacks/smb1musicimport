@@ -5,7 +5,7 @@
 #include "famitracker_parser.h"
 #include "write_file.h"
 
-#define SP_2(speed) (speed)*1, (speed)*2, (speed)*3, (speed)*4, (speed)*8, (speed)*12, (speed)*16, (speed)*32
+#define SP_2(speed) (speed)*1, (speed)*2, (speed)*4, (speed)*6, (speed)*8, (speed)*12, (speed)*16, (speed)*32
 #define SP_3(speed) (speed)*1, (speed)*2, (speed)*3, (speed)*4, (speed)*6, (speed)*12, (speed)*18, (speed)*24
 
 uint8_t MusicLengthLookupTbl[] =
@@ -270,9 +270,10 @@ int main(int argc, char* argv[])
 
                 int pattern_number = file.order_to_pattern(ch, order_no);
                 int cur_row_length = -1;
-                bool d00_effect = false;
+                bool cutoff_effect = false;
+                int cutoff_goto_value = -1; //this is set by a Bxx effect, -1 means it's just the end of the pattern
 
-                while (!file.end_of_pattern() && !d00_effect)
+                while (!file.end_of_pattern() && !cutoff_effect)
                 {
                     int next_note_distance = 0;
                     std::string cur_note = file.get_note(0, 0);
@@ -284,10 +285,19 @@ int main(int argc, char* argv[])
                         std::vector<std::string> effects = file.get_effects(1, 0);
                         check_note = file.get_note(0, 0);
                         file.current_row();
-                        d00_effect = std::find(effects.begin(), effects.end(), "D00") != effects.end();
+                        //cutoff_effect = std::find(effects.begin(), effects.end(), "D00") != effects.end();
+                        for (auto& effect : effects)
+                        {
+                            if (effect == "D00") cutoff_effect = true;
+                            else if (effect[0] == 'B')
+                            {
+                                cutoff_effect = true;
+                                cutoff_goto_value = stoi(effect.substr(1, 2), nullptr, 16);
+                            }
+                        }
                         next_note_distance++;
-                    } while (check_note == "..." && !d00_effect);
-                    if (d00_effect) next_note_distance++;
+                    } while (check_note == "..." && !cutoff_effect);
+                    if (cutoff_effect) next_note_distance++;
                     if (ch == SQ2_CH || ch == TRI_CH)
                     {
                         bool put_down_note = false;
@@ -325,7 +335,11 @@ int main(int argc, char* argv[])
                         handle_noi_note(music_data[ch][pattern_number], next_note_distance, note_value, cur_row_length);
                     }
                 }
-                if (ch == SQ2_CH) music_data[ch][pattern_number].push_back(0);
+                if (ch == SQ2_CH)
+                {
+                    music_data[ch][pattern_number].push_back(0);
+                    music_data[ch][pattern_number].push_back(cutoff_goto_value);
+                }
                 file.pattern_done(ch, order_no);
             }
         }

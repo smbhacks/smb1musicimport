@@ -1,4 +1,4 @@
-.db $00, $88 ;G#4 ;Usable by SQ2, SQ1, Triangle
+.db $00, $86 ;G#4 ;Usable by SQ2, SQ1, Triangle
 .db $00, $2f ;D-6
 .db $00, $00 ;... ;--- ;===
 .db $02, $a6 ;E-2
