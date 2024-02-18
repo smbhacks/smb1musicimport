@@ -1,64 +1,64 @@
-.db $00, $86 ;G#4 ;Usable by SQ2, SQ1, Triangle
-.db $00, $2f ;D-6
-.db $00, $00 ;... ;--- ;===
-.db $02, $a6 ;E-2
-.db $02, $80 ;F-2
-.db $02, $5c ;F#2
-.db $02, $3a ;G-2
-.db $02, $1a ;G#2
-.db $01, $df ;A#2
-.db $01, $c4 ;B-2
-.db $01, $ab ;C-3
-.db $01, $93 ;C#3
-.db $01, $7c ;D-3
-.db $01, $67 ;D#3
-.db $01, $53 ;E-3
-.db $01, $40 ;F-3
-.db $01, $2e ;F#3
-.db $01, $1d ;G-3
-.db $01, $0d ;G#3
-.db $00, $fe ;A-3
-.db $00, $ef ;A#3
-.db $00, $e2 ;B-3
-.db $00, $d5 ;C-4
-.db $00, $c9 ;C#4
-.db $00, $be ;D-4
-.db $00, $b3 ;D#4
-.db $00, $a9 ;E-4
-.db $00, $a0 ;F-4
-.db $00, $97 ;F#4
-.db $00, $8e ;G-4
-.db $00, $86 ;G#4
-.db $00, $77 ;A#4
-.db $00, $7e ;A-4 ;Not usable in SQ1 from here
-.db $00, $71 ;B-4
-.db $00, $54 ;E-5
-.db $00, $64 ;C#5
-.db $00, $5f ;D-5
-.db $00, $59 ;D#5
-.db $00, $50 ;F-5
-.db $00, $47 ;G-5
-.db $00, $43 ;G#5
-.db $00, $3b ;A#5
-.db $00, $35 ;C-6
-.db $00, $2a ;E-6
-.db $00, $23 ;G-6
-.db $04, $75 ;G-1
-.db $03, $57 ;C-2
-.db $02, $f9 ;D-2
-.db $02, $cf ;D#2
-.db $01, $fc ;A-2
-.db $00, $6a ;C-5
-.db $00, $4b ;F#5 ;Extra-notes that are not in vanilla SMB1 
-.db $00, $3f ;A-5
-.db $00, $38 ;B-5
-.db $00, $31 ;C#6
-.db $00, $2c ;D#6
-.db $00, $27 ;F-6
-.db $05, $4c ;E-1
-.db $05, $00 ;F-1
-.db $04, $b8 ;F#1
-.db $04, $34 ;G#1
-.db $03, $f8 ;A-1
-.db $03, $bf ;A#1
-.db $03, $89 ;B-1
+nA_2_: .db $01, $fc ;A-2 ;Usable by only SQ1 ;Reserved TRI cut-off note
+nD_6: .db $00, $2f ;D-6 ;Usable by SQ2, SQ1, TRI from here
+n___: .db $00, $00 ;... ;--- ;===
+nE_2: .db $02, $a6 ;E-2
+nF_2: .db $02, $80 ;F-2
+nFs2: .db $02, $5c ;F#2
+nG_2: .db $02, $3a ;G-2
+nGs2: .db $02, $1a ;G#2
+nAs2: .db $01, $df ;A#2
+nB_2: .db $01, $c4 ;B-2
+nC_3: .db $01, $ab ;C-3
+nCs3: .db $01, $93 ;C#3
+nD_3: .db $01, $7c ;D-3
+nDs3: .db $01, $67 ;D#3
+nE_3: .db $01, $53 ;E-3
+nF_3: .db $01, $40 ;F-3
+nFs3: .db $01, $2e ;F#3
+nG_3: .db $01, $1d ;G-3
+nGs3: .db $01, $0d ;G#3
+nA_3: .db $00, $fe ;A-3
+nAs3: .db $00, $ef ;A#3
+nB_3: .db $00, $e2 ;B-3
+nC_4: .db $00, $d5 ;C-4
+nCs4: .db $00, $c9 ;C#4
+nD_4: .db $00, $be ;D-4
+nDs4: .db $00, $b3 ;D#4
+nE_4: .db $00, $a9 ;E-4
+nF_4: .db $00, $a0 ;F-4
+nFs4: .db $00, $97 ;F#4
+nG_4: .db $00, $8e ;G-4
+nGs4: .db $00, $86 ;G#4
+nAs4: .db $00, $77 ;A#4
+nA_4: .db $00, $7e ;A-4 ;Not usable in SQ1 from here
+nB_4: .db $00, $71 ;B-4
+nE_5: .db $00, $54 ;E-5
+nCs5: .db $00, $64 ;C#5
+nD_5: .db $00, $5f ;D-5
+nDs5: .db $00, $59 ;D#5
+nF_5: .db $00, $50 ;F-5
+nG_5: .db $00, $47 ;G-5
+nGs5: .db $00, $43 ;G#5
+nAs5: .db $00, $3b ;A#5
+nC_6: .db $00, $35 ;C-6
+nE_6: .db $00, $2a ;E-6
+nG_6: .db $00, $23 ;G-6
+nG_1: .db $04, $75 ;G-1
+nC_2: .db $03, $57 ;C-2
+nD_2: .db $02, $f9 ;D-2
+nDs2: .db $02, $cf ;D#2
+nA_2: .db $01, $fc ;A-2
+nC_5: .db $00, $6a ;C-5
+nFs5: .db $00, $4b ;F#5 ;Extra-notes that are not in vanilla SMB1 
+nA_5: .db $00, $3f ;A-5
+nB_5: .db $00, $38 ;B-5
+nCs6: .db $00, $31 ;C#6
+nDs6: .db $00, $2c ;D#6
+nF_6: .db $00, $27 ;F-6
+nE_1: .db $05, $4c ;E-1
+nF_1: .db $05, $00 ;F-1
+nFs1: .db $04, $b8 ;F#1
+nGs1: .db $04, $34 ;G#1
+nA_1: .db $03, $f8 ;A-1
+nAs1: .db $03, $bf ;A#1
+nB_1: .db $03, $89 ;B-1

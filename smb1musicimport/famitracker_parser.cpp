@@ -55,6 +55,7 @@ FtTXT::FtTXT(std::string path)
 			instrument.name = get_string(pos);
 			m_instruments.push_back(instrument);
 		}
+		num_of_instruments = m_instruments.size();
 
 		//load macros
 		pos = next_line(m_content.find(MacrosLabel));
@@ -190,7 +191,22 @@ int FtTXT::get_instrument(int row_advance_before_note, int row_advance_after_not
 
 FtTXT::FtInst FtTXT::get_FtInst(int instrument_number)
 {
-	return m_instruments[instrument_number];
+	if (instrument_number < m_instruments.size()) return m_instruments[instrument_number];
+	else
+	{
+		FtInst blank;
+		return blank;
+	}
+}
+
+FtTXT::FtMacro FtTXT::get_FtMacro(int purpose, int id)
+{
+	for (int macro_num = 0; macro_num < m_macros.size(); macro_num++)
+	{
+		if (m_macros[macro_num].purpose == purpose && m_macros[macro_num].id == id) return m_macros[macro_num];
+	}
+	FtMacro blank;
+	return blank;
 }
 
 std::string FtTXT::get_note(int row_advance_before_note, int row_advance_after_note)

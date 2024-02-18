@@ -9,7 +9,7 @@ class FtTXT
 public:
 	struct FtMacro
 	{
-		int purpose;
+		int purpose = -1; //blank macro
 		int id;
 		int loop;
 		int release;
@@ -19,13 +19,13 @@ public:
 
 	struct FtInst
 	{
-		int id;
+		int id = -1;
 		int volume;
 		int arpeggio;
 		int pitch;
 		int hipitch;
 		int duty;
-		std::string name;
+		std::string name = "__NOT_EXISTING_INSTRUMENT";
 	};
 
 private:
@@ -62,9 +62,11 @@ public:
 	std::string get_note(int row_advance_before_note = 0, int row_advance_after_note = 1);
 	std::vector<std::string> get_effects(int row_advance_before_note = 0, int row_advance_after_note = 1);
 	FtInst get_FtInst(int instrument_number);
+	FtMacro get_FtMacro(int purpose, int id);
 
 	int num_of_tracks;
 	int num_of_orders;
+	int num_of_instruments;
 	int track_speed;
 	int track_tempo;
 	std::string track_name;

@@ -16,309 +16,202 @@ MusicLengthLookupTbl:
 
 GroundLevel_PatternsHigh:
 	.dh GroundLevel_SQ1_CH_p0, GroundLevel_SQ2_CH_p0, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p0
-	.dh GroundLevel_SQ1_CH_p0, GroundLevel_SQ2_CH_p1, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p0
+	.dh GroundLevel_SQ1_CH_p1, GroundLevel_SQ2_CH_p1, GroundLevel_TRI_CH_p1, GroundLevel_NOI_CH_p1
+	.dh GroundLevel_SQ1_CH_p2, GroundLevel_SQ2_CH_p2, GroundLevel_TRI_CH_p2, GroundLevel_NOI_CH_p1
+	.dh GroundLevel_SQ1_CH_p1, GroundLevel_SQ2_CH_p1, GroundLevel_TRI_CH_p1, GroundLevel_NOI_CH_p1
+	.dh GroundLevel_SQ1_CH_p2, GroundLevel_SQ2_CH_p2, GroundLevel_TRI_CH_p2, GroundLevel_NOI_CH_p1
+	.dh GroundLevel_SQ1_CH_p3, GroundLevel_SQ2_CH_p3, GroundLevel_TRI_CH_p3, GroundLevel_NOI_CH_p1
+	.dh GroundLevel_SQ1_CH_p4, GroundLevel_SQ2_CH_p4, GroundLevel_TRI_CH_p4, GroundLevel_NOI_CH_p1
+	.dh GroundLevel_SQ1_CH_p3, GroundLevel_SQ2_CH_p3, GroundLevel_TRI_CH_p3, GroundLevel_NOI_CH_p1
+	.dh GroundLevel_SQ1_CH_p5, GroundLevel_SQ2_CH_p5, GroundLevel_TRI_CH_p5, GroundLevel_NOI_CH_p1
+	.dh GroundLevel_SQ1_CH_p3, GroundLevel_SQ2_CH_p3, GroundLevel_TRI_CH_p3, GroundLevel_NOI_CH_p1
+	.dh GroundLevel_SQ1_CH_p4, GroundLevel_SQ2_CH_p4, GroundLevel_TRI_CH_p4, GroundLevel_NOI_CH_p1
+	.dh GroundLevel_SQ1_CH_p3, GroundLevel_SQ2_CH_p3, GroundLevel_TRI_CH_p3, GroundLevel_NOI_CH_p1
+	.dh GroundLevel_SQ1_CH_p5, GroundLevel_SQ2_CH_p5, GroundLevel_TRI_CH_p5, GroundLevel_NOI_CH_p1
+	.dh GroundLevel_SQ1_CH_p6, GroundLevel_SQ2_CH_p6, GroundLevel_TRI_CH_p6, GroundLevel_NOI_CH_p0
+	.dh GroundLevel_SQ1_CH_p7, GroundLevel_SQ2_CH_p7, GroundLevel_TRI_CH_p6, GroundLevel_NOI_CH_p0
+	.dh GroundLevel_SQ1_CH_p6, GroundLevel_SQ2_CH_p6, GroundLevel_TRI_CH_p6, GroundLevel_NOI_CH_p0
 	.dh GroundLevel_SQ1_CH_p0, GroundLevel_SQ2_CH_p0, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p0
-	.dh GroundLevel_SQ1_CH_p1, GroundLevel_SQ2_CH_p2, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p1
-	.dh GroundLevel_SQ1_CH_p0, GroundLevel_SQ2_CH_p0, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p2
-	.dh GroundLevel_SQ1_CH_p0, GroundLevel_SQ2_CH_p1, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p3
-	.dh GroundLevel_SQ1_CH_p0, GroundLevel_SQ2_CH_p0, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p2
-	.dh GroundLevel_SQ1_CH_p2, GroundLevel_SQ2_CH_p2, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p4
-	.dh GroundLevel_SQ1_CH_p0, GroundLevel_SQ2_CH_p0, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p2
-	.dh GroundLevel_SQ1_CH_p0, GroundLevel_SQ2_CH_p1, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p3
-	.dh GroundLevel_SQ1_CH_p0, GroundLevel_SQ2_CH_p0, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p2
-	.dh GroundLevel_SQ1_CH_p0, GroundLevel_SQ2_CH_p2, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p3
-	.dh GroundLevel_SQ1_CH_p0, GroundLevel_SQ2_CH_p0, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p2
-	.dh GroundLevel_SQ1_CH_p0, GroundLevel_SQ2_CH_p1, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p3
-	.dh GroundLevel_SQ1_CH_p0, GroundLevel_SQ2_CH_p0, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p2
-	.dh GroundLevel_SQ1_CH_p2, GroundLevel_SQ2_CH_p3, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p4
-	.dh GroundLevel_SQ1_CH_p3, GroundLevel_SQ2_CH_p4, GroundLevel_TRI_CH_p1, GroundLevel_NOI_CH_p0
-	.dh GroundLevel_SQ1_CH_p4, GroundLevel_SQ2_CH_p4, GroundLevel_TRI_CH_p1, GroundLevel_NOI_CH_p5
-	.dh GroundLevel_SQ1_CH_p5, GroundLevel_SQ2_CH_p4, GroundLevel_TRI_CH_p1, GroundLevel_NOI_CH_p6
-	.dh GroundLevel_SQ1_CH_p6, GroundLevel_SQ2_CH_p4, GroundLevel_TRI_CH_p1, GroundLevel_NOI_CH_p6
-	.dh GroundLevel_SQ1_CH_p7, GroundLevel_SQ2_CH_p0, GroundLevel_TRI_CH_p2, GroundLevel_NOI_CH_p7
-	.dh GroundLevel_SQ1_CH_p7, GroundLevel_SQ2_CH_p1, GroundLevel_TRI_CH_p2, GroundLevel_NOI_CH_p7
-	.dh GroundLevel_SQ1_CH_p7, GroundLevel_SQ2_CH_p0, GroundLevel_TRI_CH_p2, GroundLevel_NOI_CH_p7
-	.dh GroundLevel_SQ1_CH_p8, GroundLevel_SQ2_CH_p2, GroundLevel_TRI_CH_p2, GroundLevel_NOI_CH_p3
-	.dh GroundLevel_SQ1_CH_p9, GroundLevel_SQ2_CH_p6, GroundLevel_TRI_CH_p3, GroundLevel_NOI_CH_p7
-	.dh GroundLevel_SQ1_CH_p10, GroundLevel_SQ2_CH_p7, GroundLevel_TRI_CH_p3, GroundLevel_NOI_CH_p3
-	.dh GroundLevel_SQ1_CH_p9, GroundLevel_SQ2_CH_p6, GroundLevel_TRI_CH_p3, GroundLevel_NOI_CH_p7
-	.dh GroundLevel_SQ1_CH_p11, GroundLevel_SQ2_CH_p7, GroundLevel_TRI_CH_p6, GroundLevel_NOI_CH_p6
-	.dh GroundLevel_SQ1_CH_p12, GroundLevel_SQ2_CH_p8, GroundLevel_TRI_CH_p4, GroundLevel_NOI_CH_p7
-	.dh GroundLevel_SQ1_CH_p13, GroundLevel_SQ2_CH_p9, GroundLevel_TRI_CH_p4, GroundLevel_NOI_CH_p3
-	.dh GroundLevel_SQ1_CH_p12, GroundLevel_SQ2_CH_p8, GroundLevel_TRI_CH_p4, GroundLevel_NOI_CH_p7
-	.dh GroundLevel_SQ1_CH_p14, GroundLevel_SQ2_CH_p10, GroundLevel_TRI_CH_p5, GroundLevel_NOI_CH_p4
-	.dh GroundLevel_SQ1_CH_p9, GroundLevel_SQ2_CH_p11, GroundLevel_TRI_CH_p3, GroundLevel_NOI_CH_p7
-	.dh GroundLevel_SQ1_CH_p10, GroundLevel_SQ2_CH_p11, GroundLevel_TRI_CH_p3, GroundLevel_NOI_CH_p3
-	.dh GroundLevel_SQ1_CH_p9, GroundLevel_SQ2_CH_p11, GroundLevel_TRI_CH_p3, GroundLevel_NOI_CH_p7
-	.dh GroundLevel_SQ1_CH_p15, GroundLevel_SQ2_CH_p12, GroundLevel_TRI_CH_p7, GroundLevel_NOI_CH_p8
-	.dh GroundLevel_SQ1_CH_p16, GroundLevel_SQ2_CH_p13, GroundLevel_TRI_CH_p8, GroundLevel_NOI_CH_p9
-	.dh GroundLevel_SQ1_CH_p16, GroundLevel_SQ2_CH_p13, GroundLevel_TRI_CH_p9, GroundLevel_NOI_CH_p9
-	.dh GroundLevel_SQ1_CH_p16, GroundLevel_SQ2_CH_p13, GroundLevel_TRI_CH_p10, GroundLevel_NOI_CH_p9
-	.dh GroundLevel_SQ1_CH_p17, GroundLevel_SQ2_CH_p13, GroundLevel_TRI_CH_p8, GroundLevel_NOI_CH_p9
-	.dh GroundLevel_SQ1_CH_p16, GroundLevel_SQ2_CH_p0, GroundLevel_TRI_CH_p11, GroundLevel_NOI_CH_p2
-	.dh GroundLevel_SQ1_CH_p16, GroundLevel_SQ2_CH_p1, GroundLevel_TRI_CH_p12, GroundLevel_NOI_CH_p3
-	.dh GroundLevel_SQ1_CH_p16, GroundLevel_SQ2_CH_p14, GroundLevel_TRI_CH_p14, GroundLevel_NOI_CH_p2
-	.dh GroundLevel_SQ1_CH_p16, GroundLevel_SQ2_CH_p0, GroundLevel_TRI_CH_p15, GroundLevel_NOI_CH_p4
-	.dh GroundLevel_SQ1_CH_p18, GroundLevel_SQ2_CH_p15, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p2
-	.dh GroundLevel_SQ1_CH_p18, GroundLevel_SQ2_CH_p15, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p3
-	.dh GroundLevel_SQ1_CH_p18, GroundLevel_SQ2_CH_p15, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p2
-	.dh GroundLevel_SQ1_CH_p19, GroundLevel_SQ2_CH_p15, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p4
+	.dh GroundLevel_SQ1_CH_p1, GroundLevel_SQ2_CH_p1, GroundLevel_TRI_CH_p1, GroundLevel_NOI_CH_p1
+	.dh GroundLevel_SQ1_CH_p2, GroundLevel_SQ2_CH_p2, GroundLevel_TRI_CH_p2, GroundLevel_NOI_CH_p1
+	.dh GroundLevel_SQ1_CH_p1, GroundLevel_SQ2_CH_p1, GroundLevel_TRI_CH_p1, GroundLevel_NOI_CH_p1
+	.dh GroundLevel_SQ1_CH_p2, GroundLevel_SQ2_CH_p2, GroundLevel_TRI_CH_p2, GroundLevel_NOI_CH_p1
+	.dh GroundLevel_SQ1_CH_p8, GroundLevel_SQ2_CH_p8, GroundLevel_TRI_CH_p7, GroundLevel_NOI_CH_p2
+	.dh GroundLevel_SQ1_CH_p9, GroundLevel_SQ2_CH_p9, GroundLevel_TRI_CH_p8, GroundLevel_NOI_CH_p2
+	.dh GroundLevel_SQ1_CH_p8, GroundLevel_SQ2_CH_p8, GroundLevel_TRI_CH_p7, GroundLevel_NOI_CH_p2
+	.dh GroundLevel_SQ1_CH_p10, GroundLevel_SQ2_CH_p10, GroundLevel_TRI_CH_p9, GroundLevel_NOI_CH_p2
+	.dh GroundLevel_SQ1_CH_p8, GroundLevel_SQ2_CH_p8, GroundLevel_TRI_CH_p7, GroundLevel_NOI_CH_p2
+	.dh GroundLevel_SQ1_CH_p9, GroundLevel_SQ2_CH_p9, GroundLevel_TRI_CH_p8, GroundLevel_NOI_CH_p2
+	.dh GroundLevel_SQ1_CH_p8, GroundLevel_SQ2_CH_p8, GroundLevel_TRI_CH_p7, GroundLevel_NOI_CH_p2
+	.dh GroundLevel_SQ1_CH_p10, GroundLevel_SQ2_CH_p10, GroundLevel_TRI_CH_p9, GroundLevel_NOI_CH_p2
+	.dh GroundLevel_SQ1_CH_p6, GroundLevel_SQ2_CH_p6, GroundLevel_TRI_CH_p6, GroundLevel_NOI_CH_p0
+	.dh GroundLevel_SQ1_CH_p7, GroundLevel_SQ2_CH_p7, GroundLevel_TRI_CH_p6, GroundLevel_NOI_CH_p0
+	.dh GroundLevel_SQ1_CH_p6, GroundLevel_SQ2_CH_p6, GroundLevel_TRI_CH_p6, GroundLevel_NOI_CH_p0
+	.dh GroundLevel_SQ1_CH_p0, GroundLevel_SQ2_CH_p0, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p0
+	.dh GroundLevel_SQ1_CH_p8, GroundLevel_SQ2_CH_p8, GroundLevel_TRI_CH_p7, GroundLevel_NOI_CH_p2
+	.dh GroundLevel_SQ1_CH_p9, GroundLevel_SQ2_CH_p9, GroundLevel_TRI_CH_p8, GroundLevel_NOI_CH_p2
+	.dh GroundLevel_SQ1_CH_p8, GroundLevel_SQ2_CH_p8, GroundLevel_TRI_CH_p7, GroundLevel_NOI_CH_p2
+	.dh GroundLevel_SQ1_CH_p10, GroundLevel_SQ2_CH_p11, GroundLevel_TRI_CH_p9, GroundLevel_NOI_CH_p2
 	.dh 0
 
 GroundLevel_PatternsLow:
 	.dl GroundLevel_SQ1_CH_p0, GroundLevel_SQ2_CH_p0, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p0
-	.dl GroundLevel_SQ1_CH_p0, GroundLevel_SQ2_CH_p1, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p0
+	.dl GroundLevel_SQ1_CH_p1, GroundLevel_SQ2_CH_p1, GroundLevel_TRI_CH_p1, GroundLevel_NOI_CH_p1
+	.dl GroundLevel_SQ1_CH_p2, GroundLevel_SQ2_CH_p2, GroundLevel_TRI_CH_p2, GroundLevel_NOI_CH_p1
+	.dl GroundLevel_SQ1_CH_p1, GroundLevel_SQ2_CH_p1, GroundLevel_TRI_CH_p1, GroundLevel_NOI_CH_p1
+	.dl GroundLevel_SQ1_CH_p2, GroundLevel_SQ2_CH_p2, GroundLevel_TRI_CH_p2, GroundLevel_NOI_CH_p1
+	.dl GroundLevel_SQ1_CH_p3, GroundLevel_SQ2_CH_p3, GroundLevel_TRI_CH_p3, GroundLevel_NOI_CH_p1
+	.dl GroundLevel_SQ1_CH_p4, GroundLevel_SQ2_CH_p4, GroundLevel_TRI_CH_p4, GroundLevel_NOI_CH_p1
+	.dl GroundLevel_SQ1_CH_p3, GroundLevel_SQ2_CH_p3, GroundLevel_TRI_CH_p3, GroundLevel_NOI_CH_p1
+	.dl GroundLevel_SQ1_CH_p5, GroundLevel_SQ2_CH_p5, GroundLevel_TRI_CH_p5, GroundLevel_NOI_CH_p1
+	.dl GroundLevel_SQ1_CH_p3, GroundLevel_SQ2_CH_p3, GroundLevel_TRI_CH_p3, GroundLevel_NOI_CH_p1
+	.dl GroundLevel_SQ1_CH_p4, GroundLevel_SQ2_CH_p4, GroundLevel_TRI_CH_p4, GroundLevel_NOI_CH_p1
+	.dl GroundLevel_SQ1_CH_p3, GroundLevel_SQ2_CH_p3, GroundLevel_TRI_CH_p3, GroundLevel_NOI_CH_p1
+	.dl GroundLevel_SQ1_CH_p5, GroundLevel_SQ2_CH_p5, GroundLevel_TRI_CH_p5, GroundLevel_NOI_CH_p1
+	.dl GroundLevel_SQ1_CH_p6, GroundLevel_SQ2_CH_p6, GroundLevel_TRI_CH_p6, GroundLevel_NOI_CH_p0
+	.dl GroundLevel_SQ1_CH_p7, GroundLevel_SQ2_CH_p7, GroundLevel_TRI_CH_p6, GroundLevel_NOI_CH_p0
+	.dl GroundLevel_SQ1_CH_p6, GroundLevel_SQ2_CH_p6, GroundLevel_TRI_CH_p6, GroundLevel_NOI_CH_p0
 	.dl GroundLevel_SQ1_CH_p0, GroundLevel_SQ2_CH_p0, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p0
-	.dl GroundLevel_SQ1_CH_p1, GroundLevel_SQ2_CH_p2, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p1
-	.dl GroundLevel_SQ1_CH_p0, GroundLevel_SQ2_CH_p0, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p2
-	.dl GroundLevel_SQ1_CH_p0, GroundLevel_SQ2_CH_p1, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p3
-	.dl GroundLevel_SQ1_CH_p0, GroundLevel_SQ2_CH_p0, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p2
-	.dl GroundLevel_SQ1_CH_p2, GroundLevel_SQ2_CH_p2, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p4
-	.dl GroundLevel_SQ1_CH_p0, GroundLevel_SQ2_CH_p0, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p2
-	.dl GroundLevel_SQ1_CH_p0, GroundLevel_SQ2_CH_p1, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p3
-	.dl GroundLevel_SQ1_CH_p0, GroundLevel_SQ2_CH_p0, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p2
-	.dl GroundLevel_SQ1_CH_p0, GroundLevel_SQ2_CH_p2, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p3
-	.dl GroundLevel_SQ1_CH_p0, GroundLevel_SQ2_CH_p0, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p2
-	.dl GroundLevel_SQ1_CH_p0, GroundLevel_SQ2_CH_p1, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p3
-	.dl GroundLevel_SQ1_CH_p0, GroundLevel_SQ2_CH_p0, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p2
-	.dl GroundLevel_SQ1_CH_p2, GroundLevel_SQ2_CH_p3, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p4
-	.dl GroundLevel_SQ1_CH_p3, GroundLevel_SQ2_CH_p4, GroundLevel_TRI_CH_p1, GroundLevel_NOI_CH_p0
-	.dl GroundLevel_SQ1_CH_p4, GroundLevel_SQ2_CH_p4, GroundLevel_TRI_CH_p1, GroundLevel_NOI_CH_p5
-	.dl GroundLevel_SQ1_CH_p5, GroundLevel_SQ2_CH_p4, GroundLevel_TRI_CH_p1, GroundLevel_NOI_CH_p6
-	.dl GroundLevel_SQ1_CH_p6, GroundLevel_SQ2_CH_p4, GroundLevel_TRI_CH_p1, GroundLevel_NOI_CH_p6
-	.dl GroundLevel_SQ1_CH_p7, GroundLevel_SQ2_CH_p0, GroundLevel_TRI_CH_p2, GroundLevel_NOI_CH_p7
-	.dl GroundLevel_SQ1_CH_p7, GroundLevel_SQ2_CH_p1, GroundLevel_TRI_CH_p2, GroundLevel_NOI_CH_p7
-	.dl GroundLevel_SQ1_CH_p7, GroundLevel_SQ2_CH_p0, GroundLevel_TRI_CH_p2, GroundLevel_NOI_CH_p7
-	.dl GroundLevel_SQ1_CH_p8, GroundLevel_SQ2_CH_p2, GroundLevel_TRI_CH_p2, GroundLevel_NOI_CH_p3
-	.dl GroundLevel_SQ1_CH_p9, GroundLevel_SQ2_CH_p6, GroundLevel_TRI_CH_p3, GroundLevel_NOI_CH_p7
-	.dl GroundLevel_SQ1_CH_p10, GroundLevel_SQ2_CH_p7, GroundLevel_TRI_CH_p3, GroundLevel_NOI_CH_p3
-	.dl GroundLevel_SQ1_CH_p9, GroundLevel_SQ2_CH_p6, GroundLevel_TRI_CH_p3, GroundLevel_NOI_CH_p7
-	.dl GroundLevel_SQ1_CH_p11, GroundLevel_SQ2_CH_p7, GroundLevel_TRI_CH_p6, GroundLevel_NOI_CH_p6
-	.dl GroundLevel_SQ1_CH_p12, GroundLevel_SQ2_CH_p8, GroundLevel_TRI_CH_p4, GroundLevel_NOI_CH_p7
-	.dl GroundLevel_SQ1_CH_p13, GroundLevel_SQ2_CH_p9, GroundLevel_TRI_CH_p4, GroundLevel_NOI_CH_p3
-	.dl GroundLevel_SQ1_CH_p12, GroundLevel_SQ2_CH_p8, GroundLevel_TRI_CH_p4, GroundLevel_NOI_CH_p7
-	.dl GroundLevel_SQ1_CH_p14, GroundLevel_SQ2_CH_p10, GroundLevel_TRI_CH_p5, GroundLevel_NOI_CH_p4
-	.dl GroundLevel_SQ1_CH_p9, GroundLevel_SQ2_CH_p11, GroundLevel_TRI_CH_p3, GroundLevel_NOI_CH_p7
-	.dl GroundLevel_SQ1_CH_p10, GroundLevel_SQ2_CH_p11, GroundLevel_TRI_CH_p3, GroundLevel_NOI_CH_p3
-	.dl GroundLevel_SQ1_CH_p9, GroundLevel_SQ2_CH_p11, GroundLevel_TRI_CH_p3, GroundLevel_NOI_CH_p7
-	.dl GroundLevel_SQ1_CH_p15, GroundLevel_SQ2_CH_p12, GroundLevel_TRI_CH_p7, GroundLevel_NOI_CH_p8
-	.dl GroundLevel_SQ1_CH_p16, GroundLevel_SQ2_CH_p13, GroundLevel_TRI_CH_p8, GroundLevel_NOI_CH_p9
-	.dl GroundLevel_SQ1_CH_p16, GroundLevel_SQ2_CH_p13, GroundLevel_TRI_CH_p9, GroundLevel_NOI_CH_p9
-	.dl GroundLevel_SQ1_CH_p16, GroundLevel_SQ2_CH_p13, GroundLevel_TRI_CH_p10, GroundLevel_NOI_CH_p9
-	.dl GroundLevel_SQ1_CH_p17, GroundLevel_SQ2_CH_p13, GroundLevel_TRI_CH_p8, GroundLevel_NOI_CH_p9
-	.dl GroundLevel_SQ1_CH_p16, GroundLevel_SQ2_CH_p0, GroundLevel_TRI_CH_p11, GroundLevel_NOI_CH_p2
-	.dl GroundLevel_SQ1_CH_p16, GroundLevel_SQ2_CH_p1, GroundLevel_TRI_CH_p12, GroundLevel_NOI_CH_p3
-	.dl GroundLevel_SQ1_CH_p16, GroundLevel_SQ2_CH_p14, GroundLevel_TRI_CH_p14, GroundLevel_NOI_CH_p2
-	.dl GroundLevel_SQ1_CH_p16, GroundLevel_SQ2_CH_p0, GroundLevel_TRI_CH_p15, GroundLevel_NOI_CH_p4
-	.dl GroundLevel_SQ1_CH_p18, GroundLevel_SQ2_CH_p15, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p2
-	.dl GroundLevel_SQ1_CH_p18, GroundLevel_SQ2_CH_p15, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p3
-	.dl GroundLevel_SQ1_CH_p18, GroundLevel_SQ2_CH_p15, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p2
-	.dl GroundLevel_SQ1_CH_p19, GroundLevel_SQ2_CH_p15, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p4
+	.dl GroundLevel_SQ1_CH_p1, GroundLevel_SQ2_CH_p1, GroundLevel_TRI_CH_p1, GroundLevel_NOI_CH_p1
+	.dl GroundLevel_SQ1_CH_p2, GroundLevel_SQ2_CH_p2, GroundLevel_TRI_CH_p2, GroundLevel_NOI_CH_p1
+	.dl GroundLevel_SQ1_CH_p1, GroundLevel_SQ2_CH_p1, GroundLevel_TRI_CH_p1, GroundLevel_NOI_CH_p1
+	.dl GroundLevel_SQ1_CH_p2, GroundLevel_SQ2_CH_p2, GroundLevel_TRI_CH_p2, GroundLevel_NOI_CH_p1
+	.dl GroundLevel_SQ1_CH_p8, GroundLevel_SQ2_CH_p8, GroundLevel_TRI_CH_p7, GroundLevel_NOI_CH_p2
+	.dl GroundLevel_SQ1_CH_p9, GroundLevel_SQ2_CH_p9, GroundLevel_TRI_CH_p8, GroundLevel_NOI_CH_p2
+	.dl GroundLevel_SQ1_CH_p8, GroundLevel_SQ2_CH_p8, GroundLevel_TRI_CH_p7, GroundLevel_NOI_CH_p2
+	.dl GroundLevel_SQ1_CH_p10, GroundLevel_SQ2_CH_p10, GroundLevel_TRI_CH_p9, GroundLevel_NOI_CH_p2
+	.dl GroundLevel_SQ1_CH_p8, GroundLevel_SQ2_CH_p8, GroundLevel_TRI_CH_p7, GroundLevel_NOI_CH_p2
+	.dl GroundLevel_SQ1_CH_p9, GroundLevel_SQ2_CH_p9, GroundLevel_TRI_CH_p8, GroundLevel_NOI_CH_p2
+	.dl GroundLevel_SQ1_CH_p8, GroundLevel_SQ2_CH_p8, GroundLevel_TRI_CH_p7, GroundLevel_NOI_CH_p2
+	.dl GroundLevel_SQ1_CH_p10, GroundLevel_SQ2_CH_p10, GroundLevel_TRI_CH_p9, GroundLevel_NOI_CH_p2
+	.dl GroundLevel_SQ1_CH_p6, GroundLevel_SQ2_CH_p6, GroundLevel_TRI_CH_p6, GroundLevel_NOI_CH_p0
+	.dl GroundLevel_SQ1_CH_p7, GroundLevel_SQ2_CH_p7, GroundLevel_TRI_CH_p6, GroundLevel_NOI_CH_p0
+	.dl GroundLevel_SQ1_CH_p6, GroundLevel_SQ2_CH_p6, GroundLevel_TRI_CH_p6, GroundLevel_NOI_CH_p0
+	.dl GroundLevel_SQ1_CH_p0, GroundLevel_SQ2_CH_p0, GroundLevel_TRI_CH_p0, GroundLevel_NOI_CH_p0
+	.dl GroundLevel_SQ1_CH_p8, GroundLevel_SQ2_CH_p8, GroundLevel_TRI_CH_p7, GroundLevel_NOI_CH_p2
+	.dl GroundLevel_SQ1_CH_p9, GroundLevel_SQ2_CH_p9, GroundLevel_TRI_CH_p8, GroundLevel_NOI_CH_p2
+	.dl GroundLevel_SQ1_CH_p8, GroundLevel_SQ2_CH_p8, GroundLevel_TRI_CH_p7, GroundLevel_NOI_CH_p2
+	.dl GroundLevel_SQ1_CH_p10, GroundLevel_SQ2_CH_p11, GroundLevel_TRI_CH_p9, GroundLevel_NOI_CH_p2
 
 GroundLevel_SQ1_CH_p0:
-	.db $E3
+	.db $A0, $21, $21, $A0, $21, $6B, $63
 
 GroundLevel_SQ1_CH_p1:
-	.db $23, $00, $5C, $98, $92, $8E, $54, $A6, $66, $66
+	.db $1D, $84, $15, $84, $0D, $84, $15, $19, $96, $15
 
 GroundLevel_SQ1_CH_p2:
-	.db $E2, $00, $46, $E8, $86, $6C, $46, $6C, $68, $5E, $98
+	.db $D4, $E2, $EA, $2D, $A6, $2B, $27, $9C, $9E, $19, $84
 
 GroundLevel_SQ1_CH_p3:
-	.db $00, $13, $13, $13, $13
+	.db $05, $B4, $B2, $B0, $2B, $2D, $9C, $9E, $23, $94, $9C, $9E
 
 GroundLevel_SQ1_CH_p4:
-	.db $00, $13, $13, $D2, $66, $92, $66, $66
+	.db $05, $B4, $B2, $B0, $2B, $2D, $37, $B6, $77
 
 GroundLevel_SQ1_CH_p5:
-	.db $00, $D2, $5C, $D2, $5C, $52, $9C, $52, $52, $92, $5C
+	.db $05, $25, $84, $1F, $84, $DD
 
 GroundLevel_SQ1_CH_p6:
-	.db $00, $92, $5C, $5C, $D2, $5C, $52, $9C, $BA, $B4, $6C
+	.db $A4, $25, $25, $A4, $29, $A2, $1D, $9C, $55
 
 GroundLevel_SQ1_CH_p7:
-	.db $A2, $DE, $DC, $DE, $DE, $98
+	.db $A4, $25, $25, $A4, $A8, $E3, $84
 
 GroundLevel_SQ1_CH_p8:
-	.db $A2, $DE, $DC, $E6, $DE, $98
+	.db $AC, $27, $1D, $84, $1D, $9E, $2D, $AC, $5F
 
 GroundLevel_SQ1_CH_p9:
-	.db $EB
+	.db $E2, $F6, $F6, $F6, $F4, $F0, $AC, $27, $9E, $5D
 
 GroundLevel_SQ1_CH_p10:
-	.db $E9
-
-GroundLevel_SQ1_CH_p11:
-	.db $AD, $84, $00, $46, $3A, $3A, $7A, $B4, $6C
-
-GroundLevel_SQ1_CH_p12:
-	.db $F3
-
-GroundLevel_SQ1_CH_p13:
-	.db $F1
-
-GroundLevel_SQ1_CH_p14:
-	.db $F5
-
-GroundLevel_SQ1_CH_p15:
-	.db $AD, $EC, $EE, $B2
-
-GroundLevel_SQ1_CH_p16:
-	.db $DD
-
-GroundLevel_SQ1_CH_p17:
-	.db $9D, $00, $E8, $D4, $86
-
-GroundLevel_SQ1_CH_p18:
-	.db $C5
-
-GroundLevel_SQ1_CH_p19:
-	.db $C5
+	.db $E2, $F0, $04, $B0, $F0, $EC, $EA, $A2, $1D, $9C, $55
 
 GroundLevel_SQ2_CH_p0:
-	.db $87, $2A, $00, $FF
+	.db $82, $34, $84, $34, $34, $82, $2C, $84, $34, $87, $3A, $00, $FF
 
 GroundLevel_SQ2_CH_p1:
-	.db $87, $28, $00, $FF
+	.db $84, $2C, $82, $04, $84, $22, $82, $04, $84, $1C, $82, $04, $84, $26, $2A, $82
+	.db $28, $84, $26, $00, $FF
 
 GroundLevel_SQ2_CH_p2:
-	.db $87, $2C, $00, $FF
+	.db $83, $22, $34, $3A, $84, $40, $82, $36, $84, $3A, $34, $82, $2C, $30, $84, $2A
+	.db $82, $04, $00, $FF
 
 GroundLevel_SQ2_CH_p3:
-	.db $86, $2C, $83, $26, $1E, $82, $18, $00, $FF
+	.db $84, $04, $82, $3A, $38, $36, $84, $32, $34, $82, $24, $26, $84, $2C, $82, $26
+	.db $2C, $30, $00, $FF
 
 GroundLevel_SQ2_CH_p4:
-	.db $82, $04, $83, $1E, $1C, $1E, $1E, $82, $18, $00, $FF
+	.db $84, $04, $82, $3A, $38, $36, $84, $32, $34, $64, $82, $64, $85, $64, $00, $FF
+
+GroundLevel_SQ2_CH_p5:
+	.db $84, $04, $32, $82, $04, $84, $30, $82, $04, $87, $2C, $00, $FF
 
 GroundLevel_SQ2_CH_p6:
-	.db $81, $34, $26, $36, $34, $40, $36, $34, $30, $44, $26, $44, $30, $4C, $34, $2C
-	.db $30, $00, $FF
+	.db $82, $2C, $84, $2C, $2C, $82, $2C, $84, $30, $82, $34, $84, $2C, $82, $26, $85
+	.db $22, $00, $FF
 
 GroundLevel_SQ2_CH_p7:
-	.db $81, $34, $26, $36, $34, $40, $36, $34, $30, $4C, $26, $4C, $30, $48, $34, $2C
-	.db $30, $00, $FF
+	.db $82, $2C, $84, $2C, $2C, $82, $2C, $30, $87, $34, $82, $04, $00, $FF
 
 GroundLevel_SQ2_CH_p8:
-	.db $81, $4A, $46, $4A, $34, $3C, $34, $3C, $42, $4A, $32, $4A, $3C, $44, $34, $2E
-	.db $32, $00, $FF
+	.db $82, $34, $84, $2C, $22, $82, $04, $84, $24, $82, $26, $84, $36, $82, $36, $85
+	.db $26, $00, $FF
 
 GroundLevel_SQ2_CH_p9:
-	.db $81, $24, $2E, $32, $34, $3C, $34, $3C, $42, $44, $32, $44, $3C, $46, $34, $2E
-	.db $32, $00, $FF
+	.db $83, $2A, $40, $40, $40, $3A, $36, $82, $34, $84, $2C, $82, $26, $85, $22, $00
+	.db $FF
 
 GroundLevel_SQ2_CH_p10:
-	.db $81, $44, $4A, $44, $34, $3C, $34, $3C, $42, $44, $32, $44, $3C, $46, $34, $2E
-	.db $32, $00, $FF
+	.db $83, $2A, $36, $80, $04, $82, $36, $83, $36, $34, $30, $87, $2C, $00, $FF
 
 GroundLevel_SQ2_CH_p11:
-	.db $81, $2A, $28, $2A, $2C, $42, $3E, $42, $64, $42, $3E, $42, $64, $42, $3E, $42
-	.db $64, $00, $FF
-
-GroundLevel_SQ2_CH_p12:
-	.db $81, $2A, $28, $2A, $2C, $42, $3E, $42, $64, $83, $64, $46, $82, $4A, $00, $FF
-
-GroundLevel_SQ2_CH_p13:
-	.db $81, $2A, $28, $2A, $2C, $42, $3E, $42, $64, $42, $3E, $42, $64, $2A, $28, $2A
-	.db $2C, $00, $FF
-
-GroundLevel_SQ2_CH_p14:
-	.db $87, $26, $00, $FF
-
-GroundLevel_SQ2_CH_p15:
-	.db $87, $04, $00, $FF
+	.db $83, $2A, $36, $80, $04, $82, $36, $83, $36, $34, $30, $87, $2C, $00, $01
 
 GroundLevel_TRI_CH_p0:
-	.db $81, $5E, $06, $04, $5E, $06, $04, $5E, $06, $04, $06, $04, $5E, $08, $04, $5E
-	.db $04
+	.db $82, $18, $84, $18, $18, $82, $18, $84, $18, $85, $3A, $22
 
 GroundLevel_TRI_CH_p1:
-	.db $87, $06
+	.db $84, $22, $82, $04, $84, $1C, $82, $04, $84, $14, $82, $04, $84, $1E, $22, $82
+	.db $20, $84, $1E
 
 GroundLevel_TRI_CH_p2:
-	.db $81, $5E, $06, $80, $34, $04, $81, $5E, $06, $04, $5E, $06, $80, $44, $04, $81
-	.db $06, $80, $44, $04, $81, $5E, $80, $4C, $08, $81, $04, $5E, $04
+	.db $83, $1C, $2C, $34, $84, $36, $82, $30, $84, $34, $2C, $82, $26, $2A, $84, $22
+	.db $82, $04
 
 GroundLevel_TRI_CH_p3:
-	.db $81, $5E, $06, $36, $5E, $06, $34, $5E, $06, $36, $06, $04, $36, $08, $04, $80
-	.db $30, $5E, $81, $04
-
-GroundLevel_TRI_CH_p6:
-	.db $81, $5E, $06, $36, $5E, $06, $34, $5E, $06, $40, $06, $04, $36, $08, $04, $80
-	.db $30, $5E, $81, $04
+	.db $84, $14, $82, $04, $84, $22, $82, $04, $84, $2C, $1E, $82, $04, $2C, $84, $2C
+	.db $1E
 
 GroundLevel_TRI_CH_p4:
-	.db $81, $0A, $0E, $40, $0A, $0E, $3C, $0A, $0E, $40, $0E, $04, $40, $62, $04, $80
-	.db $38, $0A, $81, $04
+	.db $84, $14, $82, $04, $84, $1C, $82, $04, $22, $84, $2C, $4E, $82, $4E, $84, $4E
+	.db $22
 
 GroundLevel_TRI_CH_p5:
-	.db $81, $0A, $0E, $40, $0A, $0E, $3C, $0A, $0E, $46, $0E, $04, $40, $62, $04, $80
-	.db $38, $0A, $81, $04
+	.db $84, $14, $24, $82, $04, $84, $28, $82, $04, $84, $2C, $82, $04, $22, $84, $22
+	.db $14
+
+GroundLevel_TRI_CH_p6:
+	.db $84, $0E, $82, $04, $84, $1A, $82, $04, $84, $24, $22, $82, $04, $84, $14, $82
+	.db $04, $84, $0C
 
 GroundLevel_TRI_CH_p7:
-	.db $81, $5E, $82, $06, $81, $5E, $82, $06, $81, $5E, $06, $80, $14, $82, $5C, $80
-	.db $04, $14, $82, $5C, $80, $04, $1A, $81, $60, $80, $04
+	.db $84, $14, $82, $04, $20, $84, $22, $2C, $1E, $1E, $82, $2C, $2C, $84, $1E
 
 GroundLevel_TRI_CH_p8:
-	.db $87, $12
+	.db $84, $18, $82, $04, $1E, $84, $22, $2A, $22, $22, $82, $2C, $2C, $84, $22
 
 GroundLevel_TRI_CH_p9:
-	.db $87, $10
-
-GroundLevel_TRI_CH_p10:
-	.db $87, $62
-
-GroundLevel_TRI_CH_p11:
-	.db $81, $06, $5E, $06, $04, $06, $04, $5E, $06, $04, $06, $04, $06, $5E, $80, $1C
-	.db $04, $81, $1C, $80, $06, $04
-
-GroundLevel_TRI_CH_p12:
-	.db $81, $06, $04, $06, $04, $06, $04, $06, $5E, $04, $06, $1C, $04, $5E, $06, $04
-	.db $80, $06, $04
-
-GroundLevel_TRI_CH_p14:
-	.db $81, $06, $04, $5E, $04, $06, $04, $80, $06, $04, $06, $04, $06, $04, $06, $04
-	.db $81, $1C, $80, $06, $04, $81, $06, $1C, $80, $06, $04, $81, $06
-
-GroundLevel_TRI_CH_p15:
-	.db $81, $5E, $06, $04, $5E, $06, $04, $5E, $06, $04, $06, $5E, $04, $06, $04, $06
-	.db $04
+	.db $84, $22, $82, $04, $22, $83, $22, $26, $2A, $84, $2C, $22, $85, $14
 
 GroundLevel_NOI_CH_p0:
-	.db $21, $00
+	.db $31, $90, $31, $90, $31, $31, $84, $31, $90, $90, $90, $00
 
 GroundLevel_NOI_CH_p1:
-	.db $21, $70, $90, $70, $60, $90, $70, $B0, $70, $70, $00
+	.db $21, $D0, $50, $31, $D0, $50, $00
 
 GroundLevel_NOI_CH_p2:
-	.db $60, $50, $50, $60, $70, $50, $50, $60, $50, $70, $60, $50, $70, $50, $50, $70
-	.db $00
-
-GroundLevel_NOI_CH_p3:
-	.db $60, $70, $50, $50, $70, $50, $50, $60, $70, $70, $60, $70, $20, $10, $50, $70
-	.db $50, $00
-
-GroundLevel_NOI_CH_p4:
-	.db $60, $70, $50, $70, $70, $50, $50, $60, $50, $70, $60, $70, $70, $10, $10, $50
-	.db $70, $00
-
-GroundLevel_NOI_CH_p5:
-	.db $21, $21, $E0, $70, $A0, $70, $70, $00
-
-GroundLevel_NOI_CH_p6:
-	.db $60, $50, $60, $70, $60, $50, $50, $70, $60, $70, $50, $70, $60, $70, $50, $70
-	.db $00
-
-GroundLevel_NOI_CH_p7:
-	.db $60, $50, $60, $70, $70, $50, $50, $60, $70, $70, $60, $50, $70, $50, $70, $70
-	.db $00
-
-GroundLevel_NOI_CH_p8:
-	.db $60, $50, $60, $70, $70, $50, $50, $60, $30, $B0, $04, $70, $50, $10, $10, $30
-	.db $70, $04, $00
-
-GroundLevel_NOI_CH_p9:
-	.db $20, $10, $50, $60, $70, $50, $50, $50, $70, $60, $50, $50, $60, $50, $50, $60
-	.db $70, $00
+	.db $11, $84, $90, $31, $11, $00
 
 WaterMus_PatternsHigh:
 	.dh WaterMus_SQ1_CH_p0, WaterMus_SQ2_CH_p0, WaterMus_TRI_CH_p0, WaterMus_NOI_CH_p0
@@ -392,30 +285,30 @@ WaterMus_SQ2_CH_p7:
 	.db $FF
 
 WaterMus_TRI_CH_p0:
-	.db $87, $04, $81, $22, $04, $85, $22
+	.db $87, $00, $81, $22, $00, $85, $22
 
 WaterMus_TRI_CH_p1:
-	.db $81, $14, $04, $22, $04, $2C, $04, $12, $04, $22, $04, $2A, $04, $14, $04, $22
-	.db $04, $2C, $04, $1C, $04, $22, $04, $2C, $04
+	.db $81, $14, $00, $22, $00, $2C, $00, $12, $00, $22, $00, $2A, $00, $14, $00, $22
+	.db $00, $2C, $00, $1C, $00, $22, $00, $2C, $00
 
 WaterMus_TRI_CH_p2:
-	.db $81, $18, $04, $22, $04, $2A, $04, $16, $04, $20, $04, $28, $04, $18, $04, $22
-	.db $04, $2A, $04, $12, $04, $22, $04, $2A, $04
+	.db $81, $18, $00, $22, $00, $2A, $00, $16, $00, $20, $00, $28, $00, $18, $00, $22
+	.db $00, $2A, $00, $12, $00, $22, $00, $2A, $00
 
 WaterMus_TRI_CH_p3:
-	.db $81, $18, $04, $22, $04, $2A, $04, $12, $04, $22, $04, $2A, $04, $14, $04, $22
-	.db $04, $2C, $04, $0C, $04, $22, $04, $2C, $04
+	.db $81, $18, $00, $22, $00, $2A, $00, $12, $00, $22, $00, $2A, $00, $14, $00, $22
+	.db $00, $2C, $00, $0C, $00, $22, $00, $2C, $00
 
 WaterMus_TRI_CH_p4:
-	.db $81, $14, $04, $22, $04, $34, $04, $12, $04, $22, $04, $30, $04, $10, $04, $22
-	.db $04, $2E, $04, $16, $04, $22, $04, $34, $04
+	.db $81, $14, $00, $22, $00, $34, $00, $12, $00, $22, $00, $30, $00, $10, $00, $22
+	.db $00, $2E, $00, $16, $00, $22, $00, $34, $00
 
 WaterMus_TRI_CH_p5:
-	.db $81, $18, $04, $26, $04, $36, $04, $16, $04, $26, $04, $36, $04, $14, $04, $26
-	.db $04, $36, $04, $12, $04, $22, $04, $36, $04
+	.db $81, $18, $00, $26, $00, $36, $00, $16, $00, $26, $00, $36, $00, $14, $00, $26
+	.db $00, $36, $00, $12, $00, $22, $00, $36, $00
 
 WaterMus_TRI_CH_p6:
-	.db $81, $5C, $04, $22, $04, $34, $04, $0C, $04, $22, $04, $22, $04, $84, $1E, $81
+	.db $81, $5C, $00, $22, $00, $34, $00, $0C, $00, $22, $00, $22, $00, $84, $1E, $81
 	.db $04, $12, $85, $14
 
 WaterMus_NOI_CH_p0:
@@ -613,7 +506,7 @@ ASilence_SQ2_CH_p0:
 	.db $87, $04, $00, $FF
 
 ASilence_TRI_CH_p0:
-	.db $87, $04
+	.db $87, $00
 
 ASilence_NOI_CH_p0:
 	.db $C5, $00
@@ -666,7 +559,7 @@ GameOverMus_SQ2_CH_p0:
 	.db $24, $86, $22, $82, $04, $00, $FF
 
 GameOverMus_TRI_CH_p0:
-	.db $82, $22, $84, $04, $82, $1C, $84, $04, $14, $85, $1E, $86, $16, $14, $82, $04
+	.db $82, $22, $84, $00, $82, $1C, $84, $00, $14, $85, $1E, $86, $16, $14, $82, $00
 
 GameOverMus_NOI_CH_p0:
 	.db $C5, $C5, $C5, $84, $00
@@ -711,11 +604,11 @@ WinCastleMus_SQ2_CH_p0:
 	.db $36, $80, $04, $81, $36, $80, $04, $86, $3A, $82, $04, $80, $04, $00, $FF
 
 WinCastleMus_TRI_CH_p0:
-	.db $85, $14, $80, $04, $04, $81, $14, $80, $04, $04, $14, $04, $14, $04, $14, $04
-	.db $85, $16, $80, $04, $04, $81, $16, $80, $04, $04, $16, $04, $16, $04, $16, $04
-	.db $28, $04, $22, $04, $1A, $04, $28, $04, $22, $04, $1A, $04, $28, $04, $81, $28
-	.db $80, $04, $04, $2C, $81, $04, $80, $2C, $81, $04, $80, $2C, $81, $04, $86, $30
-	.db $82, $04, $80, $04
+	.db $85, $14, $80, $04, $00, $81, $14, $80, $04, $00, $14, $00, $14, $00, $14, $00
+	.db $85, $16, $80, $04, $00, $81, $16, $80, $04, $00, $16, $00, $16, $00, $16, $00
+	.db $28, $00, $22, $00, $1A, $00, $28, $00, $22, $00, $1A, $00, $28, $00, $81, $28
+	.db $80, $04, $00, $2C, $81, $00, $80, $2C, $81, $00, $80, $2C, $81, $00, $86, $30
+	.db $82, $00, $80, $04
 
 WinCastleMus_NOI_CH_p0:
 	.db $C5, $C5, $C5, $00
@@ -734,7 +627,7 @@ UnusedSlot_SQ2_CH_p0:
 	.db $87, $04, $00, $FF
 
 UnusedSlot_TRI_CH_p0:
-	.db $87, $04
+	.db $87, $00
 
 UnusedSlot_NOI_CH_p0:
 	.db $C5, $00
@@ -747,7 +640,7 @@ EndOfLevelMus_PatternsLow:
 	.dl EndOfLevelMus_SQ1_CH_p0, EndOfLevelMus_SQ2_CH_p0, EndOfLevelMus_TRI_CH_p0, EndOfLevelMus_NOI_CH_p0
 
 EndOfLevelMus_SQ1_CH_p0:
-	.db $4C, $54, $5C, $62, $6C, $74, $FA, $F4, $4E, $54, $5A, $64, $6C, $72, $C0, $F2
+	.db $4C, $54, $5C, $62, $6C, $74, $FA, $F4, $4E, $54, $5A, $64, $6C, $72, $FC, $F2
 	.db $50, $58, $5E, $68, $70, $76, $FE, $7E, $7E, $7E, $35, $04, $45, $44, $04
 
 EndOfLevelMus_SQ2_CH_p0:
@@ -756,9 +649,9 @@ EndOfLevelMus_SQ2_CH_p0:
 	.db $80, $04, $85, $04, $81, $04, $80, $04, $00, $FF
 
 EndOfLevelMus_TRI_CH_p0:
-	.db $83, $04, $81, $14, $1C, $22, $83, $34, $81, $2C, $84, $04, $81, $04, $14, $1A
-	.db $24, $83, $32, $81, $2C, $84, $04, $81, $04, $18, $1E, $28, $83, $36, $30, $84
-	.db $2C, $80, $04, $85, $04, $81, $04, $80, $04
+	.db $83, $04, $81, $14, $1C, $22, $83, $34, $81, $2C, $84, $00, $81, $04, $14, $1A
+	.db $24, $83, $32, $81, $2C, $84, $00, $81, $04, $18, $1E, $28, $83, $36, $30, $84
+	.db $2C, $80, $04, $85, $00, $81, $04, $80, $04
 
 EndOfLevelMus_NOI_CH_p0:
 	.db $C5, $C5, $C5, $00
@@ -771,15 +664,15 @@ TimeRunningOut_PatternsLow:
 	.dl TimeRunningOut_SQ1_CH_p0, TimeRunningOut_SQ2_CH_p0, TimeRunningOut_TRI_CH_p0, TimeRunningOut_NOI_CH_p0
 
 TimeRunningOut_SQ1_CH_p0:
-	.db $46, $A4, $64, $A4, $48, $A6, $66, $A6, $4A, $A8, $68, $A8, $AA, $AB
+	.db $46, $A4, $64, $A4, $48, $A6, $66, $A6, $4A, $A8, $68, $A8, $6A, $44, $AB
 
 TimeRunningOut_SQ2_CH_p0:
 	.db $81, $1C, $82, $30, $81, $30, $82, $30, $81, $1E, $82, $32, $81, $32, $82, $32
-	.db $81, $20, $82, $34, $81, $34, $82, $34, $36, $86, $36, $00, $FF
+	.db $81, $20, $82, $34, $81, $34, $82, $34, $81, $36, $04, $86, $36, $00, $FF
 
 TimeRunningOut_TRI_CH_p0:
-	.db $81, $2A, $42, $04, $42, $42, $04, $2C, $64, $04, $64, $64, $04, $2E, $46, $04
-	.db $46, $46, $04, $22, $04, $84, $22, $81, $04, $80, $04, $82, $04, $80, $04
+	.db $81, $2A, $42, $00, $42, $42, $00, $2C, $64, $00, $64, $64, $00, $2E, $46, $00
+	.db $46, $46, $00, $22, $00, $84, $22, $81, $04, $80, $04, $82, $00, $80, $04
 
 TimeRunningOut_NOI_CH_p0:
 	.db $C5, $85, $05, $00
@@ -798,7 +691,7 @@ ESilence_SQ2_CH_p0:
 	.db $87, $04, $00, $FF
 
 ESilence_TRI_CH_p0:
-	.db $87, $04
+	.db $87, $00
 
 ESilence_NOI_CH_p0:
 	.db $C5, $00
@@ -821,19 +714,53 @@ MusicHeaderData:
 	.db TimeRunningOutHdr-MHD
 	.db ESilenceHdr-MHD
 
-GroundLevelHdr: .db $10, <GroundLevel_PatternsHigh, >GroundLevel_PatternsHigh, <GroundLevel_PatternsLow, >GroundLevel_PatternsLow
-WaterMusHdr: .db $18, <WaterMus_PatternsHigh, >WaterMus_PatternsHigh, <WaterMus_PatternsLow, >WaterMus_PatternsLow
-UndergroundMusHdr: .db $48, <UndergroundMus_PatternsHigh, >UndergroundMus_PatternsHigh, <UndergroundMus_PatternsLow, >UndergroundMus_PatternsLow
-CastleMusHdr: .db $20, <CastleMus_PatternsHigh, >CastleMus_PatternsHigh, <CastleMus_PatternsLow, >CastleMus_PatternsLow
-CloudMusHdr: .db $40, <CloudMus_PatternsHigh, >CloudMus_PatternsHigh, <CloudMus_PatternsLow, >CloudMus_PatternsLow
-PipeMusHdr: .db $48, <PipeMus_PatternsHigh, >PipeMus_PatternsHigh, <PipeMus_PatternsLow, >PipeMus_PatternsLow
-StarMusHdr: .db $40, <StarMus_PatternsHigh, >StarMus_PatternsHigh, <StarMus_PatternsLow, >StarMus_PatternsLow
-ASilenceHdr: .db $28, <ASilence_PatternsHigh, >ASilence_PatternsHigh, <ASilence_PatternsLow, >ASilence_PatternsLow
-DeathMusHdr: .db $48, <DeathMus_PatternsHigh, >DeathMus_PatternsHigh, <DeathMus_PatternsLow, >DeathMus_PatternsLow
-GameOverMusHdr: .db $48, <GameOverMus_PatternsHigh, >GameOverMus_PatternsHigh, <GameOverMus_PatternsLow, >GameOverMus_PatternsLow
-VictoryMusHdr: .db $40, <VictoryMus_PatternsHigh, >VictoryMus_PatternsHigh, <VictoryMus_PatternsLow, >VictoryMus_PatternsLow
-WinCastleMusHdr: .db $18, <WinCastleMus_PatternsHigh, >WinCastleMus_PatternsHigh, <WinCastleMus_PatternsLow, >WinCastleMus_PatternsLow
-UnusedSlotHdr: .db $28, <UnusedSlot_PatternsHigh, >UnusedSlot_PatternsHigh, <UnusedSlot_PatternsLow, >UnusedSlot_PatternsLow
-EndOfLevelMusHdr: .db $18, <EndOfLevelMus_PatternsHigh, >EndOfLevelMus_PatternsHigh, <EndOfLevelMus_PatternsLow, >EndOfLevelMus_PatternsLow
-TimeRunningOutHdr: .db $10, <TimeRunningOut_PatternsHigh, >TimeRunningOut_PatternsHigh, <TimeRunningOut_PatternsLow, >TimeRunningOut_PatternsLow
-ESilenceHdr: .db $28, <ESilence_PatternsHigh, >ESilence_PatternsHigh, <ESilence_PatternsLow, >ESilence_PatternsLow
+GroundLevelHdr: .db $48, <GroundLevel_PatternsHigh, >GroundLevel_PatternsHigh, <GroundLevel_PatternsLow, >GroundLevel_PatternsLow, ShortSquare_id, SHORTTRI
+WaterMusHdr: .db $18, <WaterMus_PatternsHigh, >WaterMus_PatternsHigh, <WaterMus_PatternsLow, >WaterMus_PatternsLow, LongSquare_id, LONGTRI
+UndergroundMusHdr: .db $48, <UndergroundMus_PatternsHigh, >UndergroundMus_PatternsHigh, <UndergroundMus_PatternsLow, >UndergroundMus_PatternsLow, ShortSquare_id, SHORTTRI
+CastleMusHdr: .db $20, <CastleMus_PatternsHigh, >CastleMus_PatternsHigh, <CastleMus_PatternsLow, >CastleMus_PatternsLow, ShortSquare_id, LONGTRI
+CloudMusHdr: .db $40, <CloudMus_PatternsHigh, >CloudMus_PatternsHigh, <CloudMus_PatternsLow, >CloudMus_PatternsLow, ShortSquare_id, SHORTTRI
+PipeMusHdr: .db $48, <PipeMus_PatternsHigh, >PipeMus_PatternsHigh, <PipeMus_PatternsLow, >PipeMus_PatternsLow, ShortSquare_id, SHORTTRI
+StarMusHdr: .db $40, <StarMus_PatternsHigh, >StarMus_PatternsHigh, <StarMus_PatternsLow, >StarMus_PatternsLow, ShortSquare_id, SHORTTRI
+ASilenceHdr: .db $28, <ASilence_PatternsHigh, >ASilence_PatternsHigh, <ASilence_PatternsLow, >ASilence_PatternsLow, FadeOutSquare_id, LONGTRI
+DeathMusHdr: .db $48, <DeathMus_PatternsHigh, >DeathMus_PatternsHigh, <DeathMus_PatternsLow, >DeathMus_PatternsLow, FadeOutSquare_id, SHORTTRI
+GameOverMusHdr: .db $48, <GameOverMus_PatternsHigh, >GameOverMus_PatternsHigh, <GameOverMus_PatternsLow, >GameOverMus_PatternsLow, LongSquare_id, LONGTRI
+VictoryMusHdr: .db $40, <VictoryMus_PatternsHigh, >VictoryMus_PatternsHigh, <VictoryMus_PatternsLow, >VictoryMus_PatternsLow, LongSquare_id, LONGTRI
+WinCastleMusHdr: .db $18, <WinCastleMus_PatternsHigh, >WinCastleMus_PatternsHigh, <WinCastleMus_PatternsLow, >WinCastleMus_PatternsLow, __NOT_EXISTING_INSTRUMENT_id, LONGTRI
+UnusedSlotHdr: .db $28, <UnusedSlot_PatternsHigh, >UnusedSlot_PatternsHigh, <UnusedSlot_PatternsLow, >UnusedSlot_PatternsLow, FadeOutSquare_id, LONGTRI
+EndOfLevelMusHdr: .db $18, <EndOfLevelMus_PatternsHigh, >EndOfLevelMus_PatternsHigh, <EndOfLevelMus_PatternsLow, >EndOfLevelMus_PatternsLow, LongSquare_id, LONGTRI
+TimeRunningOutHdr: .db $10, <TimeRunningOut_PatternsHigh, >TimeRunningOut_PatternsHigh, <TimeRunningOut_PatternsLow, >TimeRunningOut_PatternsLow, LongSquare_id, LONGTRI
+ESilenceHdr: .db $28, <ESilence_PatternsHigh, >ESilence_PatternsHigh, <ESilence_PatternsLow, >ESilence_PatternsLow, FadeOutSquare_id, LONGTRI
+
+FadeOutSquare_id = 0
+ShortSquare_id = 1
+LongSquare_id = 2
+InfSquare_id = 3
+
+InstrumentsDataHi:
+	.dh FadeOutSquare
+	.dh ShortSquare
+	.dh LongSquare
+	.dh InfSquare
+
+InstrumentsDataLo:
+	.dl FadeOutSquare
+	.dl ShortSquare
+	.dl LongSquare
+	.dl InfSquare
+
+FadeOutSquare:
+	.db $90, $91, $92, $93, $95, $96, $97, $99, $9A, $9B, $9D, $9E
+
+ShortSquare:
+	.db $90, $94, $94, $95, $95, $96, $97, $98, $90
+
+LongSquare:
+	.db $90, $91, $92, $92, $93, $93, $93, $94, $94, $94, $94, $94, $94, $95, $95, $95
+	.db $95, $95, $95, $96, $96, $96, $96, $96, $96, $96, $96, $96, $96, $96, $96, $96
+	.db $96, $96, $96, $96, $95, $95, $94, $93, $15
+
+InfSquare:
+	.db $98, $99, $9A, $9B, $90
+
+InstrumentsLengths:
+	.db $0B, $08, $28, $04
