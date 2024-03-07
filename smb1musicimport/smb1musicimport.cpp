@@ -98,7 +98,15 @@ void handle_sq1_note(std::vector<uint8_t>& data, int remaining_rows, std::string
                 cur_row_length = UsedRowSizes[x];
                 uint8_t note_value; 
                 uint8_t rhythm_value = (x >> 2) + (x << 6);
-                if(!put_down_note) note_value = get_note_value(pitch_table, cur_note, SQ1_CH);
+                if (!put_down_note)
+                {
+                    note_value = get_note_value(pitch_table, cur_note, SQ1_CH);
+                    if ((note_value | rhythm_value) == 0)
+                    {
+                        std::cout << std::format("Can't use note {} on SQ1 with row length {} as it produces note value $00, which is reserved for the sweep!\n", cur_note, cur_row_length);
+                        note_value = get_note_value(pitch_table, "...", SQ1_CH);
+                    }
+                }
                 else note_value = get_note_value(pitch_table, "...", SQ1_CH);
                 data.push_back(note_value | rhythm_value);
                 put_down_note = true;
